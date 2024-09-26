@@ -1,0 +1,3 @@
+protocol SearchViewControllerProtocol: AnyObject {
+    
+}
