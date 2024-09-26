@@ -4,7 +4,7 @@ final class CityButton: UIButton {
     init(title: String?) {
         super.init(frame: .zero)
         
-        setTitleColor(.gray, for: .normal)
+        setTitleColor(.placeholderGray, for: .normal)
         contentHorizontalAlignment = .leading
         setTitle(title, for: .normal)
     }

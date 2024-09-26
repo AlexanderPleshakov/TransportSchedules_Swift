@@ -30,7 +30,7 @@ final class ChoosePlaceView: UIView {
     
     private let separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = .gray
+        view.backgroundColor = .secondaryGray
         
         return view
     }()
@@ -50,9 +50,9 @@ final class ChoosePlaceView: UIView {
     // MARK: Methods
     
     private func configure() {
-        layer.borderColor = UIColor.gray.cgColor
+        layer.borderColor = UIColor.secondaryGray.cgColor
         layer.cornerRadius = 6
-        layer.borderWidth = 0.5
+        layer.borderWidth = 1.5
         
         setupViews()
     }
@@ -76,7 +76,7 @@ final class ChoosePlaceView: UIView {
             
             separatorView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
             separatorView.trailingAnchor.constraint(equalTo: switchButton.leadingAnchor, constant: -12),
-            separatorView.heightAnchor.constraint(equalToConstant: 0.5),
+            separatorView.heightAnchor.constraint(equalToConstant: 1),
             
             switchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
             switchButton.centerYAnchor.constraint(equalTo: centerYAnchor),
