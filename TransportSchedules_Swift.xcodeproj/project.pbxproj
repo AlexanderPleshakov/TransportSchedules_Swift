@@ -17,6 +17,7 @@
 		160BC78F2CA5C37B00FCE873 /* SearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC78E2CA5C37B00FCE873 /* SearchPresenterProtocol.swift */; };
 		160BC7922CA5CA8300FCE873 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 160BC7902CA5CA8300FCE873 /* Localizable.strings */; };
 		160BC7952CA5CD3100FCE873 /* ChoosePlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7942CA5CD3100FCE873 /* ChoosePlaceView.swift */; };
+		160BC7972CA5E4F600FCE873 /* CityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7962CA5E4F600FCE873 /* CityButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		160BC78E2CA5C37B00FCE873 /* SearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterProtocol.swift; sourceTree = "<group>"; };
 		160BC7912CA5CA8300FCE873 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		160BC7942CA5CD3100FCE873 /* ChoosePlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlaceView.swift; sourceTree = "<group>"; };
+		160BC7962CA5E4F600FCE873 /* CityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				160BC7942CA5CD3100FCE873 /* ChoosePlaceView.swift */,
+				160BC7962CA5E4F600FCE873 /* CityButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160BC7972CA5E4F600FCE873 /* CityButton.swift in Sources */,
 				160BC78D2CA5C31300FCE873 /* SearchViewControllerProtocol.swift in Sources */,
 				160BC7762CA5BD8300FCE873 /* SearchViewController.swift in Sources */,
 				160BC78F2CA5C37B00FCE873 /* SearchPresenterProtocol.swift in Sources */,

@@ -14,35 +14,19 @@ final class ChoosePlaceView: UIView {
         return button
     }()
     
-    private let fromButton: UIButton = {
-        let button = UIButton()
-        button.setTitle(
-            NSLocalizedString(
-                "from",
-                comment: ""
-            ),
-            for: .normal
+    private let fromButton = CityButton(
+        title: NSLocalizedString(
+            "from",
+            comment: ""
         )
-        button.setTitleColor(.gray, for: .normal)
-        button.contentHorizontalAlignment = .leading
-        
-        return button
-    }()
+    )
     
-    private let toButton: UIButton = {
-        let button = UIButton()
-        button.setTitle(
-            NSLocalizedString(
-                "to",
-                comment: ""
-            ),
-            for: .normal
+    private let toButton: UIButton = CityButton(
+        title: NSLocalizedString(
+            "to",
+            comment: ""
         )
-        button.setTitleColor(.gray, for: .normal)
-        button.contentHorizontalAlignment = .leading
-        
-        return button
-    }()
+    )
     
     private let separatorView: UIView = {
         let view = UIView()
