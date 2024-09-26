@@ -15,6 +15,7 @@
 		160BC7882CA5C23B00FCE873 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7872CA5C23B00FCE873 /* SearchPresenter.swift */; };
 		160BC78D2CA5C31300FCE873 /* SearchViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC78C2CA5C31300FCE873 /* SearchViewControllerProtocol.swift */; };
 		160BC78F2CA5C37B00FCE873 /* SearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC78E2CA5C37B00FCE873 /* SearchPresenterProtocol.swift */; };
+		160BC7922CA5CA8300FCE873 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 160BC7902CA5CA8300FCE873 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		160BC7872CA5C23B00FCE873 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		160BC78C2CA5C31300FCE873 /* SearchViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerProtocol.swift; sourceTree = "<group>"; };
 		160BC78E2CA5C37B00FCE873 /* SearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterProtocol.swift; sourceTree = "<group>"; };
+		160BC7912CA5CA8300FCE873 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				160BC77A2CA5BD8400FCE873 /* Assets.xcassets */,
 				160BC77C2CA5BD8400FCE873 /* LaunchScreen.storyboard */,
 				160BC77F2CA5BD8400FCE873 /* Info.plist */,
+				160BC7902CA5CA8300FCE873 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				160BC77B2CA5BD8400FCE873 /* Assets.xcassets in Resources */,
+				160BC7922CA5CA8300FCE873 /* Localizable.strings in Resources */,
 				160BC77E2CA5BD8400FCE873 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +205,14 @@
 				160BC77D2CA5BD8400FCE873 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		160BC7902CA5CA8300FCE873 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				160BC7912CA5CA8300FCE873 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

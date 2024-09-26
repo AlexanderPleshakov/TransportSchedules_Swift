@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  TransportSchedules_Swift
+
+  Created by Александр Плешаков on 26.09.2024.
+  
+*/
+
+searchTitle = "Расписание пригородного и междугородного транспорта";
+from = "Куда";
+to = "Откуда";
+today = "Сегодня";
+tomorrow = "Завтра";
+date = "Дата";
+any = "Любой";
+search = "Найти";
