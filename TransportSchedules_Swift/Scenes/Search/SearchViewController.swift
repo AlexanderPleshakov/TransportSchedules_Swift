@@ -1,9 +1,20 @@
 import UIKit
 
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
     // MARK: Properties
     
     private let presenter: SearchPresenterProtocol
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.text = NSLocalizedString(
+            "searchTitle",
+            comment: ""
+        )
+        
+        return label
+    }()
     
     // MARK: Init
     
