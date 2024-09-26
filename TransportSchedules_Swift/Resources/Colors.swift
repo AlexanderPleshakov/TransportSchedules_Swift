@@ -28,4 +28,5 @@ extension UIColor {
     static let secondaryGray = UIColor(hexString: "#DDDDDD")
     static let placeholderGray = UIColor(hexString: "#8A8A8A")
     static let orange = UIColor(hexString: "#FECB2E")
+    static let lightGray = UIColor(hexString: "#E9ECEF")
 }

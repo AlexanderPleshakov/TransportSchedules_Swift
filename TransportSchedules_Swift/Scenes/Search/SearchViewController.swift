@@ -15,11 +15,13 @@ final class SearchViewController: UIViewController {
             comment: ""
         )
         label.numberOfLines = 2
+        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         
         return label
     }()
     
     private let choosePlaceView = ChoosePlaceView()
+    private let segmentedControl = SegmentDayControl(frame: .zero)
     
     // MARK: Init
     
@@ -46,7 +48,7 @@ final class SearchViewController: UIViewController {
     private func configure() {
         view.backgroundColor = .white
         
-        mainVStack = UIStackView(arrangedSubviews: [titleLabel, choosePlaceView])
+        mainVStack = UIStackView(arrangedSubviews: [titleLabel, choosePlaceView, segmentedControl])
         guard let mainVStack else { return }
         mainVStack.axis = .vertical
         mainVStack.alignment = .fill
@@ -58,8 +60,12 @@ final class SearchViewController: UIViewController {
         NSLayoutConstraint.activate([
             mainVStack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             mainVStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            mainVStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            mainVStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            
+            segmentedControl.heightAnchor.constraint(equalToConstant: 50)
         ])
+        
+        segmentedControl.layoutIfNeeded()
     }
 }
 

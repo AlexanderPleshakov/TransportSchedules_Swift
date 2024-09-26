@@ -7,6 +7,7 @@ final class CityButton: UIButton {
         setTitleColor(.placeholderGray, for: .normal)
         contentHorizontalAlignment = .leading
         setTitle(title, for: .normal)
+        titleLabel?.font = UIFont.systemFont(ofSize: 16)
     }
     
     required init?(coder: NSCoder) {
