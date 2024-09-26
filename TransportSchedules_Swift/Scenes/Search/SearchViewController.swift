@@ -5,6 +5,8 @@ final class SearchViewController: UIViewController {
     
     private let presenter: SearchPresenterProtocol
     
+    private var mainVStack: UIStackView?
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -12,9 +14,12 @@ final class SearchViewController: UIViewController {
             "searchTitle",
             comment: ""
         )
+        label.numberOfLines = 2
         
         return label
     }()
+    
+    private let choosePlaceView = ChoosePlaceView()
     
     // MARK: Init
     
@@ -39,7 +44,22 @@ final class SearchViewController: UIViewController {
     // MARK: Methods
     
     private func configure() {
+        view.backgroundColor = .white
         
+        mainVStack = UIStackView(arrangedSubviews: [titleLabel, choosePlaceView])
+        guard let mainVStack else { return }
+        mainVStack.axis = .vertical
+        mainVStack.alignment = .fill
+        mainVStack.spacing = 20
+        
+        mainVStack.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(mainVStack)
+        
+        NSLayoutConstraint.activate([
+            mainVStack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            mainVStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            mainVStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        ])
     }
 }
 
