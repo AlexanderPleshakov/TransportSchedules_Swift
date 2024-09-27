@@ -1,6 +1,12 @@
 import UIKit
 
+protocol ChoosePlaceViewDelegate: AnyObject {
+    func startSearch()
+}
+
 final class ChoosePlaceView: UIView {
+    weak var delegate: ChoosePlaceViewDelegate?
+    
     private let switchButton: UIButton = {
         let button = UIButton.systemButton(
             with: UIImage(
@@ -59,6 +65,8 @@ final class ChoosePlaceView: UIView {
             action: #selector(buttonSwitchCitiesTapped),
             for: .touchUpInside
         )
+        fromButton.addTarget(self, action: #selector(startSearchFlow), for: .touchUpInside)
+        toButton.addTarget(self, action: #selector(startSearchFlow), for: .touchUpInside)
         
         setupViews()
     }
@@ -105,6 +113,10 @@ final class ChoosePlaceView: UIView {
             fromButton.setTitle(fromButton.firstTitle, for: .normal)
             toButton.setTitle(fromCity, for: .normal)
         }
+    }
+    
+    @objc private func startSearchFlow() {
+        delegate?.startSearch()
     }
 }
 

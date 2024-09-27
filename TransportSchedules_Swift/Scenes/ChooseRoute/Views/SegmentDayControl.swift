@@ -1,6 +1,12 @@
 import UIKit
 
+protocol SegmentDayControlDelegate: AnyObject {
+    
+}
+
 final class SegmentDayControl: UIView {
+    weak var delegate: SegmentDayControlDelegate?
+    
     private let todayButton = SelectButton(
         title: NSLocalizedString(
             "today",

@@ -22,6 +22,10 @@
 		160BC79B2CA5EBEE00FCE873 /* SegmentDayControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC79A2CA5EBEE00FCE873 /* SegmentDayControl.swift */; };
 		160BC7C22CA70FF200FCE873 /* TransportSelectionPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7C12CA70FF200FCE873 /* TransportSelectionPanel.swift */; };
 		160BC7C42CA7104300FCE873 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7C32CA7104300FCE873 /* SelectButton.swift */; };
+		160BC7C62CA75AAC00FCE873 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7C52CA75AAC00FCE873 /* SearchViewController.swift */; };
+		160BC7CA2CA760B200FCE873 /* SearchViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7C92CA760B200FCE873 /* SearchViewControllerProtocol.swift */; };
+		160BC7CC2CA7610C00FCE873 /* SearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7CB2CA7610C00FCE873 /* SearchPresenterProtocol.swift */; };
+		160BC7CE2CA7618000FCE873 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7CD2CA7618000FCE873 /* SearchPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		160BC79A2CA5EBEE00FCE873 /* SegmentDayControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentDayControl.swift; sourceTree = "<group>"; };
 		160BC7C12CA70FF200FCE873 /* TransportSelectionPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportSelectionPanel.swift; sourceTree = "<group>"; };
 		160BC7C32CA7104300FCE873 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
+		160BC7C52CA75AAC00FCE873 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		160BC7C92CA760B200FCE873 /* SearchViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerProtocol.swift; sourceTree = "<group>"; };
+		160BC7CB2CA7610C00FCE873 /* SearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterProtocol.swift; sourceTree = "<group>"; };
+		160BC7CD2CA7618000FCE873 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				160BC78A2CA5C2D900FCE873 /* ChooseRoute */,
+				160BC7C72CA75AE900FCE873 /* Search */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -140,6 +149,25 @@
 				160BC7C32CA7104300FCE873 /* SelectButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		160BC7C72CA75AE900FCE873 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7C82CA7603600FCE873 /* Protocols */,
+				160BC7C52CA75AAC00FCE873 /* SearchViewController.swift */,
+				160BC7CD2CA7618000FCE873 /* SearchPresenter.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		160BC7C82CA7603600FCE873 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7C92CA760B200FCE873 /* SearchViewControllerProtocol.swift */,
+				160BC7CB2CA7610C00FCE873 /* SearchPresenterProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,13 +245,17 @@
 				160BC7972CA5E4F600FCE873 /* CityButton.swift in Sources */,
 				160BC7992CA5E66C00FCE873 /* Colors.swift in Sources */,
 				160BC7C22CA70FF200FCE873 /* TransportSelectionPanel.swift in Sources */,
+				160BC7CA2CA760B200FCE873 /* SearchViewControllerProtocol.swift in Sources */,
+				160BC7CC2CA7610C00FCE873 /* SearchPresenterProtocol.swift in Sources */,
 				160BC78D2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift in Sources */,
 				160BC7762CA5BD8300FCE873 /* ChooseRouteViewController.swift in Sources */,
 				160BC78F2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift in Sources */,
 				160BC7722CA5BD8300FCE873 /* AppDelegate.swift in Sources */,
+				160BC7C62CA75AAC00FCE873 /* SearchViewController.swift in Sources */,
 				160BC7882CA5C23B00FCE873 /* ChooseRoutePresenter.swift in Sources */,
 				160BC7C42CA7104300FCE873 /* SelectButton.swift in Sources */,
 				160BC7742CA5BD8300FCE873 /* SceneDelegate.swift in Sources */,
+				160BC7CE2CA7618000FCE873 /* SearchPresenter.swift in Sources */,
 				160BC7952CA5CD3100FCE873 /* ChoosePlaceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
