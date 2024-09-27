@@ -14,14 +14,14 @@ final class ChoosePlaceView: UIView {
         return button
     }()
     
-    private let fromButton = CityButton(
+    private let fromButton: CityButton = CityButton(
         title: NSLocalizedString(
             "from",
             comment: ""
         )
     )
     
-    private let toButton: UIButton = CityButton(
+    private let toButton: CityButton = CityButton(
         title: NSLocalizedString(
             "to",
             comment: ""
@@ -54,6 +54,12 @@ final class ChoosePlaceView: UIView {
         layer.cornerRadius = 6
         layer.borderWidth = 1.5
         
+        switchButton.addTarget(
+            self,
+            action: #selector(buttonSwitchCitiesTapped),
+            for: .touchUpInside
+        )
+        
         setupViews()
     }
     
@@ -83,6 +89,22 @@ final class ChoosePlaceView: UIView {
             switchButton.heightAnchor.constraint(equalToConstant: 44),
             switchButton.widthAnchor.constraint(equalToConstant: 44)
         ])
+    }
+    
+    @objc private func buttonSwitchCitiesTapped() {
+        let fromCity = fromButton.currentTitle
+        let toCity = toButton.currentTitle
+        
+        if fromButton.firstTitle != fromCity && toButton.firstTitle != toCity {
+            fromButton.setTitle(toCity, for: .normal)
+            toButton.setTitle(fromCity, for: .normal)
+        } else if fromButton.firstTitle == fromCity && toButton.firstTitle != toCity {
+            fromButton.setTitle(toCity, for: .normal)
+            toButton.setTitle(toButton.firstTitle, for: .normal)
+        } else if fromButton.firstTitle != fromCity && toButton.firstTitle == toCity {
+            fromButton.setTitle(fromButton.firstTitle, for: .normal)
+            toButton.setTitle(fromCity, for: .normal)
+        }
     }
 }
 

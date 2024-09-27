@@ -1,7 +1,11 @@
 import UIKit
 
 final class CityButton: UIButton {
+    let firstTitle: String?
+    
     init(title: String?) {
+        firstTitle = title
+        
         super.init(frame: .zero)
         
         setTitleColor(.placeholderGray, for: .normal)
