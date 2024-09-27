@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		160BC7722CA5BD8300FCE873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7712CA5BD8300FCE873 /* AppDelegate.swift */; };
 		160BC7742CA5BD8300FCE873 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7732CA5BD8300FCE873 /* SceneDelegate.swift */; };
-		160BC7762CA5BD8300FCE873 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7752CA5BD8300FCE873 /* SearchViewController.swift */; };
+		160BC7762CA5BD8300FCE873 /* ChooseRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7752CA5BD8300FCE873 /* ChooseRouteViewController.swift */; };
 		160BC77B2CA5BD8400FCE873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 160BC77A2CA5BD8400FCE873 /* Assets.xcassets */; };
 		160BC77E2CA5BD8400FCE873 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 160BC77D2CA5BD8400FCE873 /* Base */; };
-		160BC7882CA5C23B00FCE873 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7872CA5C23B00FCE873 /* SearchPresenter.swift */; };
-		160BC78D2CA5C31300FCE873 /* SearchViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC78C2CA5C31300FCE873 /* SearchViewControllerProtocol.swift */; };
-		160BC78F2CA5C37B00FCE873 /* SearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC78E2CA5C37B00FCE873 /* SearchPresenterProtocol.swift */; };
+		160BC7882CA5C23B00FCE873 /* ChooseRoutePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7872CA5C23B00FCE873 /* ChooseRoutePresenter.swift */; };
+		160BC78D2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC78C2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift */; };
+		160BC78F2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC78E2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift */; };
 		160BC7922CA5CA8300FCE873 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 160BC7902CA5CA8300FCE873 /* Localizable.strings */; };
 		160BC7952CA5CD3100FCE873 /* ChoosePlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7942CA5CD3100FCE873 /* ChoosePlaceView.swift */; };
 		160BC7972CA5E4F600FCE873 /* CityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7962CA5E4F600FCE873 /* CityButton.swift */; };
@@ -26,13 +26,13 @@
 		160BC76E2CA5BD8300FCE873 /* TransportSchedules_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransportSchedules_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		160BC7712CA5BD8300FCE873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		160BC7732CA5BD8300FCE873 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		160BC7752CA5BD8300FCE873 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		160BC7752CA5BD8300FCE873 /* ChooseRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRouteViewController.swift; sourceTree = "<group>"; };
 		160BC77A2CA5BD8400FCE873 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		160BC77D2CA5BD8400FCE873 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		160BC77F2CA5BD8400FCE873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		160BC7872CA5C23B00FCE873 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
-		160BC78C2CA5C31300FCE873 /* SearchViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerProtocol.swift; sourceTree = "<group>"; };
-		160BC78E2CA5C37B00FCE873 /* SearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterProtocol.swift; sourceTree = "<group>"; };
+		160BC7872CA5C23B00FCE873 /* ChooseRoutePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRoutePresenter.swift; sourceTree = "<group>"; };
+		160BC78C2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRouteViewControllerProtocol.swift; sourceTree = "<group>"; };
+		160BC78E2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRoutePresenterProtocol.swift; sourceTree = "<group>"; };
 		160BC7912CA5CA8300FCE873 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		160BC7942CA5CD3100FCE873 /* ChoosePlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlaceView.swift; sourceTree = "<group>"; };
 		160BC7962CA5E4F600FCE873 /* CityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityButton.swift; sourceTree = "<group>"; };
@@ -111,8 +111,8 @@
 			children = (
 				160BC7932CA5CD0500FCE873 /* Views */,
 				160BC78B2CA5C2FC00FCE873 /* Protocols */,
-				160BC7752CA5BD8300FCE873 /* SearchViewController.swift */,
-				160BC7872CA5C23B00FCE873 /* SearchPresenter.swift */,
+				160BC7752CA5BD8300FCE873 /* ChooseRouteViewController.swift */,
+				160BC7872CA5C23B00FCE873 /* ChooseRoutePresenter.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -120,8 +120,8 @@
 		160BC78B2CA5C2FC00FCE873 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				160BC78C2CA5C31300FCE873 /* SearchViewControllerProtocol.swift */,
-				160BC78E2CA5C37B00FCE873 /* SearchPresenterProtocol.swift */,
+				160BC78C2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift */,
+				160BC78E2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -210,11 +210,11 @@
 				160BC79B2CA5EBEE00FCE873 /* SegmentDayControl.swift in Sources */,
 				160BC7972CA5E4F600FCE873 /* CityButton.swift in Sources */,
 				160BC7992CA5E66C00FCE873 /* Colors.swift in Sources */,
-				160BC78D2CA5C31300FCE873 /* SearchViewControllerProtocol.swift in Sources */,
-				160BC7762CA5BD8300FCE873 /* SearchViewController.swift in Sources */,
-				160BC78F2CA5C37B00FCE873 /* SearchPresenterProtocol.swift in Sources */,
+				160BC78D2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift in Sources */,
+				160BC7762CA5BD8300FCE873 /* ChooseRouteViewController.swift in Sources */,
+				160BC78F2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift in Sources */,
 				160BC7722CA5BD8300FCE873 /* AppDelegate.swift in Sources */,
-				160BC7882CA5C23B00FCE873 /* SearchPresenter.swift in Sources */,
+				160BC7882CA5C23B00FCE873 /* ChooseRoutePresenter.swift in Sources */,
 				160BC7742CA5BD8300FCE873 /* SceneDelegate.swift in Sources */,
 				160BC7952CA5CD3100FCE873 /* ChoosePlaceView.swift in Sources */,
 			);

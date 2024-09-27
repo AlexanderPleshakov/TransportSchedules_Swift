@@ -1,9 +1,9 @@
 import UIKit
 
-final class SearchViewController: UIViewController {
+final class ChooseRouteViewController: UIViewController {
     // MARK: Properties
     
-    private let presenter: SearchPresenterProtocol
+    private let presenter: ChooseRoutePresenterProtocol
     
     private var mainVStack: UIStackView?
     
@@ -25,7 +25,7 @@ final class SearchViewController: UIViewController {
     
     // MARK: Init
     
-    init(presenter: SearchPresenterProtocol) {
+    init(presenter: ChooseRoutePresenterProtocol) {
         self.presenter = presenter
         
         super.init(nibName: nil, bundle: nil)
