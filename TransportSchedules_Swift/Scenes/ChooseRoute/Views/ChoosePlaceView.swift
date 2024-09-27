@@ -1,9 +1,5 @@
 import UIKit
 
-protocol ChoosePlaceViewDelegate: AnyObject {
-    func startSearch()
-}
-
 final class ChoosePlaceView: UIView {
     weak var delegate: ChoosePlaceViewDelegate?
     
@@ -65,8 +61,8 @@ final class ChoosePlaceView: UIView {
             action: #selector(buttonSwitchCitiesTapped),
             for: .touchUpInside
         )
-        fromButton.addTarget(self, action: #selector(startSearchFlow), for: .touchUpInside)
-        toButton.addTarget(self, action: #selector(startSearchFlow), for: .touchUpInside)
+        fromButton.addTarget(self, action: #selector(startSearchFrom), for: .touchUpInside)
+        toButton.addTarget(self, action: #selector(startSearchTo), for: .touchUpInside)
         
         setupViews()
     }
@@ -115,8 +111,12 @@ final class ChoosePlaceView: UIView {
         }
     }
     
-    @objc private func startSearchFlow() {
-        delegate?.startSearch()
+    @objc private func startSearchFrom() {
+        delegate?.startSearch(searchType: .from)
+    }
+    
+    @objc private func startSearchTo() {
+        delegate?.startSearch(searchType: .to)
     }
 }
 

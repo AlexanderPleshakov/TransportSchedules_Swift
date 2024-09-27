@@ -26,6 +26,7 @@
 		160BC7CA2CA760B200FCE873 /* SearchViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7C92CA760B200FCE873 /* SearchViewControllerProtocol.swift */; };
 		160BC7CC2CA7610C00FCE873 /* SearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7CB2CA7610C00FCE873 /* SearchPresenterProtocol.swift */; };
 		160BC7CE2CA7618000FCE873 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7CD2CA7618000FCE873 /* SearchPresenter.swift */; };
+		160BC7D02CA766B100FCE873 /* ChoosePlaceViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7CF2CA766B100FCE873 /* ChoosePlaceViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		160BC7C92CA760B200FCE873 /* SearchViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerProtocol.swift; sourceTree = "<group>"; };
 		160BC7CB2CA7610C00FCE873 /* SearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterProtocol.swift; sourceTree = "<group>"; };
 		160BC7CD2CA7618000FCE873 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		160BC7CF2CA766B100FCE873 /* ChoosePlaceViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlaceViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			children = (
 				160BC78C2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift */,
 				160BC78E2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift */,
+				160BC7CF2CA766B100FCE873 /* ChoosePlaceViewDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				160BC7CC2CA7610C00FCE873 /* SearchPresenterProtocol.swift in Sources */,
 				160BC78D2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift in Sources */,
 				160BC7762CA5BD8300FCE873 /* ChooseRouteViewController.swift in Sources */,
+				160BC7D02CA766B100FCE873 /* ChoosePlaceViewDelegate.swift in Sources */,
 				160BC78F2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift in Sources */,
 				160BC7722CA5BD8300FCE873 /* AppDelegate.swift in Sources */,
 				160BC7C62CA75AAC00FCE873 /* SearchViewController.swift in Sources */,
