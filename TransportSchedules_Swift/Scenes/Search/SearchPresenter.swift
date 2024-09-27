@@ -1,9 +1,5 @@
 import Foundation
 
-enum SearchType {
-    case from, to
-}
-
 final class SearchPresenter {
     // MARK: Properties
     

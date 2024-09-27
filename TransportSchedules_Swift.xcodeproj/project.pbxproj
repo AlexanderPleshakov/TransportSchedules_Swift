@@ -27,6 +27,7 @@
 		160BC7CC2CA7610C00FCE873 /* SearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7CB2CA7610C00FCE873 /* SearchPresenterProtocol.swift */; };
 		160BC7CE2CA7618000FCE873 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7CD2CA7618000FCE873 /* SearchPresenter.swift */; };
 		160BC7D02CA766B100FCE873 /* ChoosePlaceViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7CF2CA766B100FCE873 /* ChoosePlaceViewDelegate.swift */; };
+		160BC7D32CA7682D00FCE873 /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7D22CA7682D00FCE873 /* SearchType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		160BC7CB2CA7610C00FCE873 /* SearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterProtocol.swift; sourceTree = "<group>"; };
 		160BC7CD2CA7618000FCE873 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		160BC7CF2CA766B100FCE873 /* ChoosePlaceViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlaceViewDelegate.swift; sourceTree = "<group>"; };
+		160BC7D22CA7682D00FCE873 /* SearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		160BC7C72CA75AE900FCE873 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				160BC7D12CA7681E00FCE873 /* Models */,
 				160BC7C82CA7603600FCE873 /* Protocols */,
 				160BC7C52CA75AAC00FCE873 /* SearchViewController.swift */,
 				160BC7CD2CA7618000FCE873 /* SearchPresenter.swift */,
@@ -171,6 +174,14 @@
 				160BC7CB2CA7610C00FCE873 /* SearchPresenterProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		160BC7D12CA7681E00FCE873 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7D22CA7682D00FCE873 /* SearchType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +260,7 @@
 				160BC7992CA5E66C00FCE873 /* Colors.swift in Sources */,
 				160BC7C22CA70FF200FCE873 /* TransportSelectionPanel.swift in Sources */,
 				160BC7CA2CA760B200FCE873 /* SearchViewControllerProtocol.swift in Sources */,
+				160BC7D32CA7682D00FCE873 /* SearchType.swift in Sources */,
 				160BC7CC2CA7610C00FCE873 /* SearchPresenterProtocol.swift in Sources */,
 				160BC78D2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift in Sources */,
 				160BC7762CA5BD8300FCE873 /* ChooseRouteViewController.swift in Sources */,
