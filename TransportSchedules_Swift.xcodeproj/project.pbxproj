@@ -20,6 +20,8 @@
 		160BC7972CA5E4F600FCE873 /* CityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7962CA5E4F600FCE873 /* CityButton.swift */; };
 		160BC7992CA5E66C00FCE873 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7982CA5E66C00FCE873 /* Colors.swift */; };
 		160BC79B2CA5EBEE00FCE873 /* SegmentDayControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC79A2CA5EBEE00FCE873 /* SegmentDayControl.swift */; };
+		160BC7C22CA70FF200FCE873 /* TransportSelectionPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7C12CA70FF200FCE873 /* TransportSelectionPanel.swift */; };
+		160BC7C42CA7104300FCE873 /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7C32CA7104300FCE873 /* SelectButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		160BC7962CA5E4F600FCE873 /* CityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityButton.swift; sourceTree = "<group>"; };
 		160BC7982CA5E66C00FCE873 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		160BC79A2CA5EBEE00FCE873 /* SegmentDayControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentDayControl.swift; sourceTree = "<group>"; };
+		160BC7C12CA70FF200FCE873 /* TransportSelectionPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportSelectionPanel.swift; sourceTree = "<group>"; };
+		160BC7C32CA7104300FCE873 /* SelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 				160BC7942CA5CD3100FCE873 /* ChoosePlaceView.swift */,
 				160BC7962CA5E4F600FCE873 /* CityButton.swift */,
 				160BC79A2CA5EBEE00FCE873 /* SegmentDayControl.swift */,
+				160BC7C12CA70FF200FCE873 /* TransportSelectionPanel.swift */,
+				160BC7C32CA7104300FCE873 /* SelectButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,11 +216,13 @@
 				160BC79B2CA5EBEE00FCE873 /* SegmentDayControl.swift in Sources */,
 				160BC7972CA5E4F600FCE873 /* CityButton.swift in Sources */,
 				160BC7992CA5E66C00FCE873 /* Colors.swift in Sources */,
+				160BC7C22CA70FF200FCE873 /* TransportSelectionPanel.swift in Sources */,
 				160BC78D2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift in Sources */,
 				160BC7762CA5BD8300FCE873 /* ChooseRouteViewController.swift in Sources */,
 				160BC78F2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift in Sources */,
 				160BC7722CA5BD8300FCE873 /* AppDelegate.swift in Sources */,
 				160BC7882CA5C23B00FCE873 /* ChooseRoutePresenter.swift in Sources */,
+				160BC7C42CA7104300FCE873 /* SelectButton.swift in Sources */,
 				160BC7742CA5BD8300FCE873 /* SceneDelegate.swift in Sources */,
 				160BC7952CA5CD3100FCE873 /* ChoosePlaceView.swift in Sources */,
 			);

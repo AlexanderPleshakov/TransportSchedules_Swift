@@ -22,6 +22,7 @@ final class ChooseRouteViewController: UIViewController {
     
     private let choosePlaceView = ChoosePlaceView()
     private let segmentedControl = SegmentDayControl(frame: .zero)
+    private let transportSelectionPanel = TransportSelectionPanel()
     
     // MARK: Init
     
@@ -48,7 +49,14 @@ final class ChooseRouteViewController: UIViewController {
     private func configure() {
         view.backgroundColor = .white
         
-        mainVStack = UIStackView(arrangedSubviews: [titleLabel, choosePlaceView, segmentedControl])
+        mainVStack = UIStackView(
+            arrangedSubviews: [
+                titleLabel,
+                choosePlaceView,
+                segmentedControl,
+                transportSelectionPanel
+            ]
+        )
         guard let mainVStack else { return }
         mainVStack.axis = .vertical
         mainVStack.alignment = .fill
@@ -62,7 +70,9 @@ final class ChooseRouteViewController: UIViewController {
             mainVStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             mainVStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
-            segmentedControl.heightAnchor.constraint(equalToConstant: 50)
+            segmentedControl.heightAnchor.constraint(equalToConstant: 50),
+            
+            transportSelectionPanel.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         segmentedControl.layoutIfNeeded()
