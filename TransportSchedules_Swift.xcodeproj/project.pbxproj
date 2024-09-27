@@ -105,12 +105,12 @@
 		160BC7892CA5C2D100FCE873 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				160BC78A2CA5C2D900FCE873 /* Search */,
+				160BC78A2CA5C2D900FCE873 /* ChooseRoute */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		160BC78A2CA5C2D900FCE873 /* Search */ = {
+		160BC78A2CA5C2D900FCE873 /* ChooseRoute */ = {
 			isa = PBXGroup;
 			children = (
 				160BC7932CA5CD0500FCE873 /* Views */,
@@ -118,7 +118,7 @@
 				160BC7752CA5BD8300FCE873 /* ChooseRouteViewController.swift */,
 				160BC7872CA5C23B00FCE873 /* ChooseRoutePresenter.swift */,
 			);
-			path = Search;
+			path = ChooseRoute;
 			sourceTree = "<group>";
 		};
 		160BC78B2CA5C2FC00FCE873 /* Protocols */ = {
