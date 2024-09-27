@@ -20,6 +20,19 @@ final class ChooseRouteViewController: UIViewController {
         return label
     }()
     
+    private let searchButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle(
+            NSLocalizedString("search", comment: ""),
+            for: .normal
+        )
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .orange
+        button.layer.cornerRadius = 6
+        
+        return button
+    }()
+    
     private let choosePlaceView = ChoosePlaceView()
     private let segmentedControl = SegmentDayControl(frame: .zero)
     private let transportSelectionPanel = TransportSelectionPanel()
@@ -54,13 +67,14 @@ final class ChooseRouteViewController: UIViewController {
                 titleLabel,
                 choosePlaceView,
                 segmentedControl,
-                transportSelectionPanel
+                transportSelectionPanel,
+                searchButton
             ]
         )
         guard let mainVStack else { return }
         mainVStack.axis = .vertical
         mainVStack.alignment = .fill
-        mainVStack.spacing = 20
+        mainVStack.spacing = 16
         
         mainVStack.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(mainVStack)
@@ -71,8 +85,8 @@ final class ChooseRouteViewController: UIViewController {
             mainVStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
             segmentedControl.heightAnchor.constraint(equalToConstant: 50),
-            
-            transportSelectionPanel.heightAnchor.constraint(equalToConstant: 50)
+            transportSelectionPanel.heightAnchor.constraint(equalToConstant: 50),
+            searchButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         segmentedControl.layoutIfNeeded()
