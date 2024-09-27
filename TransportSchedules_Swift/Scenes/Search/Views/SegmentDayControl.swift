@@ -32,10 +32,21 @@ final class SegmentDayControl: UIView {
         return button
     }()
     
+    private let onDateTap: () -> Void
+    private let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMM"
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        
+        return dateFormatter
+    }()
+    
     // MARK: Init
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(onDateTap: @escaping () -> Void) {
+        self.onDateTap = onDateTap
+        
+        super.init(frame: .zero)
         
         configure()
     }
@@ -45,6 +56,11 @@ final class SegmentDayControl: UIView {
     }
     
     // MARK: Methods
+    
+    func setDate(date: Date) {
+        let selectedDate = dateFormatter.string(from: date) + " "
+        dateButton.setTitle(selectedDate, for: .normal)
+    }
     
     private func configure() {
         layer.cornerRadius = 6
@@ -87,6 +103,8 @@ final class SegmentDayControl: UIView {
             deselectButtons()
             dateButton.select()
         }
+        
+        onDateTap()
     }
     
     @objc private func buttonTomorrowTapped() {

@@ -32,9 +32,11 @@ final class ChooseRouteViewController: UIViewController {
         
         return button
     }()
+
+    private let calendarView = UICalendarView()
     
     private let choosePlaceView = ChoosePlaceView()
-    private let segmentedControl = SegmentDayControl(frame: .zero)
+    private var segmentedControl: SegmentDayControl?
     private let transportSelectionPanel = TransportSelectionPanel()
     
     // MARK: Init
@@ -62,11 +64,26 @@ final class ChooseRouteViewController: UIViewController {
     private func configure() {
         view.backgroundColor = .white
         
+        segmentedControl = SegmentDayControl {
+            UIView.animate(withDuration: 0.3) { [weak self] in
+                guard let self else { return }
+                self.calendarView.layer.opacity = 1
+            }
+        }
+        
+        searchButton.addTarget(self, action: #selector(buttonSearchTapped), for: .touchUpInside)
+        
+        setupViews()
+    }
+    
+    private func setupViews() {
+        guard let daysControl = segmentedControl else { return }
+        
         mainVStack = UIStackView(
             arrangedSubviews: [
                 titleLabel,
                 choosePlaceView,
-                segmentedControl,
+                daysControl,
                 transportSelectionPanel,
                 searchButton
             ]
@@ -84,12 +101,59 @@ final class ChooseRouteViewController: UIViewController {
             mainVStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             mainVStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
-            segmentedControl.heightAnchor.constraint(equalToConstant: 50),
+            daysControl.heightAnchor.constraint(equalToConstant: 50),
             transportSelectionPanel.heightAnchor.constraint(equalToConstant: 50),
             searchButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        segmentedControl.layoutIfNeeded()
+        daysControl.layoutIfNeeded()
+        
+        configureCalendar()
+    }
+    
+    private func configureCalendar() {
+        calendarView.translatesAutoresizingMaskIntoConstraints = false
+        
+        calendarView.calendar = .current
+        calendarView.locale = .current
+        calendarView.fontDesign = .rounded
+        calendarView.layer.cornerRadius = 12
+        calendarView.backgroundColor = .systemBackground
+        calendarView.availableDateRange = DateInterval(start: .now, end: .distantFuture)
+        
+        let selection = UICalendarSelectionSingleDate(delegate: self)
+        calendarView.selectionBehavior = selection
+        calendarView.layer.opacity = 0
+        
+        view.addSubview(calendarView)
+        NSLayoutConstraint.activate([
+            calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            calendarView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+    
+    private func closeCalendarView() {
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            guard let self else { return }
+            self.calendarView.layer.opacity = 0
+        }
+    }
+    
+    @objc private func buttonSearchTapped() {
+        
     }
 }
+
+// MARK: UICalendarSelectionSingleDateDelegate
+
+extension ChooseRouteViewController: UICalendarSelectionSingleDateDelegate {
+    func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
+        guard let date = dateComponents?.date else { return }
+        
+        segmentedControl?.setDate(date: date)
+        closeCalendarView()
+    }
+}
+
 
