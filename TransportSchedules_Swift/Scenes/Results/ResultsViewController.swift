@@ -9,6 +9,7 @@ final class ResultsViewController: UIViewController {
         let table = UITableView()
         table.backgroundColor = .white
         table.translatesAutoresizingMaskIntoConstraints = false
+        table.register(RouteCell.self, forCellReuseIdentifier: RouteCell.reuseId)
         
         return table
     }()
@@ -43,6 +44,11 @@ final class ResultsViewController: UIViewController {
         backButton.image = UIImage(systemName: "chevron.left")
         backButton.tintColor = .black
         navigationItem.leftBarButtonItem = backButton
+        
+        routesTableView.delegate = self
+        routesTableView.dataSource = self
+        
+        setupViews()
     }
     
     private func setupViews() {
@@ -66,4 +72,31 @@ final class ResultsViewController: UIViewController {
 
 extension ResultsViewController: ResultsViewControllerProtocol {
     
+}
+
+// MARK: UITableViewDelegate
+
+extension ResultsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 126
+    }
+}
+
+// MARK: UITableViewDataSource
+
+extension ResultsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.routes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: RouteCell.reuseId,
+            for: indexPath
+        ) as? RouteCell else { return UITableViewCell() }
+        
+        cell.configure(presenter.routes[indexPath.row])
+        
+        return cell
+    }
 }
