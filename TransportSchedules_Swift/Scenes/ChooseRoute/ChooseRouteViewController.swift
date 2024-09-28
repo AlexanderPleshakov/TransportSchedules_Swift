@@ -147,18 +147,25 @@ final class ChooseRouteViewController: UIViewController {
     }
     
     @objc private func buttonSearchTapped() {
-        let resultsViewController = ResultsViewController(presenter: ResultsPresenter())
-        navigationController?.pushViewController(resultsViewController, animated: true)
+        navigationController?.pushViewController(
+            ModulesAssembly.resultsScreenBuilder(),
+            animated: true
+        )
     }
 }
+
+// MARK: ChooseRouteViewControllerProtocol
+
+extension ChooseRouteViewController: ChooseRouteViewControllerProtocol {}
 
 // MARK: ChoosePlaceViewDelegate
 
 extension ChooseRouteViewController: ChoosePlaceViewDelegate {
     func startSearch(searchType: SearchType) {
-        let presenter = SearchPresenter(type: searchType, transport: .plane)
-        let searchViewController = SearchViewController(presenter: presenter)
-        presenter.view = searchViewController
+        let searchViewController = ModulesAssembly.searchScreenBuilder(
+            type: searchType,
+            transport: .any
+        )
         searchViewController.modalPresentationStyle = .pageSheet
         present(searchViewController, animated: true)
     }

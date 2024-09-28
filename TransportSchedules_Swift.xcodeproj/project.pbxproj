@@ -44,6 +44,7 @@
 		160BC7F52CA89EB400FCE873 /* StationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7F42CA89EB400FCE873 /* StationsRequest.swift */; };
 		160BC7F82CA8A0F900FCE873 /* StationsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7F72CA8A0F900FCE873 /* StationsDTO.swift */; };
 		160BC7FB2CA8C6D300FCE873 /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7FA2CA8C6D300FCE873 /* TransportType.swift */; };
+		160BC7FE2CA8CC4600FCE873 /* ModulesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7FD2CA8CC4600FCE873 /* ModulesAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		160BC7F42CA89EB400FCE873 /* StationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsRequest.swift; sourceTree = "<group>"; };
 		160BC7F72CA8A0F900FCE873 /* StationsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsDTO.swift; sourceTree = "<group>"; };
 		160BC7FA2CA8C6D300FCE873 /* TransportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportType.swift; sourceTree = "<group>"; };
+		160BC7FD2CA8CC4600FCE873 /* ModulesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 				160BC7F62CA8A0DF00FCE873 /* DTOs */,
 				160BC7FC2CA8CBC500FCE873 /* Network */,
 				160BC7F22CA898F100FCE873 /* StationsStorage.swift */,
+				160BC7FD2CA8CC4600FCE873 /* ModulesAssembly.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				160BC7762CA5BD8300FCE873 /* ChooseRouteViewController.swift in Sources */,
 				160BC7D02CA766B100FCE873 /* ChoosePlaceViewDelegate.swift in Sources */,
 				160BC7D52CA82AF900FCE873 /* Station.swift in Sources */,
+				160BC7FE2CA8CC4600FCE873 /* ModulesAssembly.swift in Sources */,
 				160BC7FB2CA8C6D300FCE873 /* TransportType.swift in Sources */,
 				160BC78F2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift in Sources */,
 				160BC7722CA5BD8300FCE873 /* AppDelegate.swift in Sources */,
