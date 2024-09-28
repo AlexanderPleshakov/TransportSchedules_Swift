@@ -1,5 +1,5 @@
 struct Route {
-    let transportType: TransportType
+    let transportType: RouteTransportType
     
     let routeName: String
     let transportName: String

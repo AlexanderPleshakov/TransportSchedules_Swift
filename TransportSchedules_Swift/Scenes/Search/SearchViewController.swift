@@ -78,6 +78,7 @@ final class SearchViewController: UIViewController {
         
         stationsTableView.dataSource = self
         stationsTableView.delegate = self
+        stationSearchBar.delegate = self
         
         setupViews()
         
@@ -174,5 +175,15 @@ extension SearchViewController: SearchViewControllerProtocol {
     func stationsWereLoaded() {
         stopProgressHud()
         stationsTableView.reloadData()
+    }
+    
+    func reloadData() {
+        stationsTableView.reloadData()
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter.filterStations(on: searchText)
     }
 }
