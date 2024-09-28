@@ -40,6 +40,9 @@
 		160BC7ED2CA88D7C00FCE873 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7EC2CA88D7C00FCE873 /* NetworkClient.swift */; };
 		160BC7EF2CA88F8800FCE873 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7EE2CA88F8800FCE873 /* NetworkRequest.swift */; };
 		160BC7F12CA88FB800FCE873 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7F02CA88FB800FCE873 /* NetworkTask.swift */; };
+		160BC7F32CA898F100FCE873 /* StationsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7F22CA898F100FCE873 /* StationsStorage.swift */; };
+		160BC7F52CA89EB400FCE873 /* StationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7F42CA89EB400FCE873 /* StationsRequest.swift */; };
+		160BC7F82CA8A0F900FCE873 /* StationsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7F72CA8A0F900FCE873 /* StationsDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		160BC7EC2CA88D7C00FCE873 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		160BC7EE2CA88F8800FCE873 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		160BC7F02CA88FB800FCE873 /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
+		160BC7F22CA898F100FCE873 /* StationsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsStorage.swift; sourceTree = "<group>"; };
+		160BC7F42CA89EB400FCE873 /* StationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsRequest.swift; sourceTree = "<group>"; };
+		160BC7F72CA8A0F900FCE873 /* StationsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,11 +267,22 @@
 		160BC7EB2CA88D6C00FCE873 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				160BC7F62CA8A0DF00FCE873 /* DTOs */,
 				160BC7EC2CA88D7C00FCE873 /* NetworkClient.swift */,
 				160BC7EE2CA88F8800FCE873 /* NetworkRequest.swift */,
 				160BC7F02CA88FB800FCE873 /* NetworkTask.swift */,
+				160BC7F22CA898F100FCE873 /* StationsStorage.swift */,
+				160BC7F42CA89EB400FCE873 /* StationsRequest.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		160BC7F62CA8A0DF00FCE873 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7F72CA8A0F900FCE873 /* StationsDTO.swift */,
+			);
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,16 +359,19 @@
 				160BC79B2CA5EBEE00FCE873 /* SegmentDayControl.swift in Sources */,
 				160BC7F12CA88FB800FCE873 /* NetworkTask.swift in Sources */,
 				160BC7972CA5E4F600FCE873 /* CityButton.swift in Sources */,
+				160BC7F32CA898F100FCE873 /* StationsStorage.swift in Sources */,
 				160BC7992CA5E66C00FCE873 /* Colors.swift in Sources */,
 				160BC7C22CA70FF200FCE873 /* TransportSelectionPanel.swift in Sources */,
 				160BC7E52CA83F0900FCE873 /* RouteCell.swift in Sources */,
 				160BC7CA2CA760B200FCE873 /* SearchViewControllerProtocol.swift in Sources */,
 				160BC7D32CA7682D00FCE873 /* SearchType.swift in Sources */,
 				160BC7CC2CA7610C00FCE873 /* SearchPresenterProtocol.swift in Sources */,
+				160BC7F82CA8A0F900FCE873 /* StationsDTO.swift in Sources */,
 				160BC7DD2CA835A100FCE873 /* ResultsPresenter.swift in Sources */,
 				160BC7EA2CA8490200FCE873 /* TransportType.swift in Sources */,
 				160BC78D2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift in Sources */,
 				160BC7ED2CA88D7C00FCE873 /* NetworkClient.swift in Sources */,
+				160BC7F52CA89EB400FCE873 /* StationsRequest.swift in Sources */,
 				160BC7762CA5BD8300FCE873 /* ChooseRouteViewController.swift in Sources */,
 				160BC7D02CA766B100FCE873 /* ChoosePlaceViewDelegate.swift in Sources */,
 				160BC7D52CA82AF900FCE873 /* Station.swift in Sources */,
