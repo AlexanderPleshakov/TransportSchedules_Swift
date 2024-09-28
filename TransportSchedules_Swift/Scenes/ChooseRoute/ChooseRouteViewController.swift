@@ -64,6 +64,11 @@ final class ChooseRouteViewController: UIViewController {
     private func configure() {
         view.backgroundColor = .white
         
+        navigationController?.navigationItem.backButtonTitle = NSLocalizedString(
+            "back",
+            comment: ""
+        )
+        
         segmentedControl = SegmentDayControl {
             UIView.animate(withDuration: 0.3) { [weak self] in
                 guard let self else { return }
@@ -142,7 +147,8 @@ final class ChooseRouteViewController: UIViewController {
     }
     
     @objc private func buttonSearchTapped() {
-        
+        let resultsViewController = ResultsViewController(presenter: ResultsPresenter())
+        navigationController?.pushViewController(resultsViewController, animated: true)
     }
 }
 

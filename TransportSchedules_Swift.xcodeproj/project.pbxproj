@@ -30,6 +30,10 @@
 		160BC7D32CA7682D00FCE873 /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7D22CA7682D00FCE873 /* SearchType.swift */; };
 		160BC7D52CA82AF900FCE873 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7D42CA82AF900FCE873 /* Station.swift */; };
 		160BC7D82CA832EC00FCE873 /* SubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7D72CA832EC00FCE873 /* SubtitleTableViewCell.swift */; };
+		160BC7DB2CA8358200FCE873 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7DA2CA8358200FCE873 /* ResultsViewController.swift */; };
+		160BC7DD2CA835A100FCE873 /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7DC2CA835A100FCE873 /* ResultsPresenter.swift */; };
+		160BC7E02CA835D500FCE873 /* ResultsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7DF2CA835D500FCE873 /* ResultsPresenterProtocol.swift */; };
+		160BC7E22CA835EE00FCE873 /* ResultsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7E12CA835EE00FCE873 /* ResultsViewControllerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +62,10 @@
 		160BC7D22CA7682D00FCE873 /* SearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
 		160BC7D42CA82AF900FCE873 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		160BC7D72CA832EC00FCE873 /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
+		160BC7DA2CA8358200FCE873 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		160BC7DC2CA835A100FCE873 /* ResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenter.swift; sourceTree = "<group>"; };
+		160BC7DF2CA835D500FCE873 /* ResultsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterProtocol.swift; sourceTree = "<group>"; };
+		160BC7E12CA835EE00FCE873 /* ResultsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 			children = (
 				160BC78A2CA5C2D900FCE873 /* ChooseRoute */,
 				160BC7C72CA75AE900FCE873 /* Search */,
+				160BC7D92CA8356700FCE873 /* Results */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -196,6 +205,25 @@
 				160BC7D72CA832EC00FCE873 /* SubtitleTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		160BC7D92CA8356700FCE873 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7DE2CA835B700FCE873 /* Protocols */,
+				160BC7DA2CA8358200FCE873 /* ResultsViewController.swift */,
+				160BC7DC2CA835A100FCE873 /* ResultsPresenter.swift */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
+		160BC7DE2CA835B700FCE873 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7DF2CA835D500FCE873 /* ResultsPresenterProtocol.swift */,
+				160BC7E12CA835EE00FCE873 /* ResultsViewControllerProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +304,7 @@
 				160BC7CA2CA760B200FCE873 /* SearchViewControllerProtocol.swift in Sources */,
 				160BC7D32CA7682D00FCE873 /* SearchType.swift in Sources */,
 				160BC7CC2CA7610C00FCE873 /* SearchPresenterProtocol.swift in Sources */,
+				160BC7DD2CA835A100FCE873 /* ResultsPresenter.swift in Sources */,
 				160BC78D2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift in Sources */,
 				160BC7762CA5BD8300FCE873 /* ChooseRouteViewController.swift in Sources */,
 				160BC7D02CA766B100FCE873 /* ChoosePlaceViewDelegate.swift in Sources */,
@@ -285,10 +314,13 @@
 				160BC7C62CA75AAC00FCE873 /* SearchViewController.swift in Sources */,
 				160BC7882CA5C23B00FCE873 /* ChooseRoutePresenter.swift in Sources */,
 				160BC7C42CA7104300FCE873 /* SelectButton.swift in Sources */,
+				160BC7E22CA835EE00FCE873 /* ResultsViewControllerProtocol.swift in Sources */,
 				160BC7742CA5BD8300FCE873 /* SceneDelegate.swift in Sources */,
+				160BC7DB2CA8358200FCE873 /* ResultsViewController.swift in Sources */,
 				160BC7D82CA832EC00FCE873 /* SubtitleTableViewCell.swift in Sources */,
 				160BC7CE2CA7618000FCE873 /* SearchPresenter.swift in Sources */,
 				160BC7952CA5CD3100FCE873 /* ChoosePlaceView.swift in Sources */,
+				160BC7E02CA835D500FCE873 /* ResultsPresenterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

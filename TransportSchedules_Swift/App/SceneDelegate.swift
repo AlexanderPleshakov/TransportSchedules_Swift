@@ -16,7 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
-        window?.rootViewController = ChooseRouteViewController(presenter: ChooseRoutePresenter())
+        let chooseRouteViewController = ChooseRouteViewController(presenter: ChooseRoutePresenter())
+        window?.rootViewController = UINavigationController(rootViewController: chooseRouteViewController)
     }
 }
 
