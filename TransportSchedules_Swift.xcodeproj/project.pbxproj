@@ -271,11 +271,8 @@
 			children = (
 				160BC7F92CA8C6C300FCE873 /* Models */,
 				160BC7F62CA8A0DF00FCE873 /* DTOs */,
-				160BC7EC2CA88D7C00FCE873 /* NetworkClient.swift */,
-				160BC7EE2CA88F8800FCE873 /* NetworkRequest.swift */,
-				160BC7F02CA88FB800FCE873 /* NetworkTask.swift */,
+				160BC7FC2CA8CBC500FCE873 /* Network */,
 				160BC7F22CA898F100FCE873 /* StationsStorage.swift */,
-				160BC7F42CA89EB400FCE873 /* StationsRequest.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -294,6 +291,17 @@
 				160BC7FA2CA8C6D300FCE873 /* TransportType.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		160BC7FC2CA8CBC500FCE873 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7EC2CA88D7C00FCE873 /* NetworkClient.swift */,
+				160BC7EE2CA88F8800FCE873 /* NetworkRequest.swift */,
+				160BC7F02CA88FB800FCE873 /* NetworkTask.swift */,
+				160BC7F42CA89EB400FCE873 /* StationsRequest.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
