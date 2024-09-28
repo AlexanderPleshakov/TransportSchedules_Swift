@@ -5,6 +5,14 @@ final class ResultsViewController: UIViewController {
     
     private let presenter: ResultsPresenterProtocol
     
+    private var routesTableView: UITableView = {
+        let table = UITableView()
+        table.backgroundColor = .white
+        table.translatesAutoresizingMaskIntoConstraints = false
+        
+        return table
+    }()
+    
     // MARK: Init
     
     init(presenter: ResultsPresenterProtocol) {
@@ -37,7 +45,18 @@ final class ResultsViewController: UIViewController {
         navigationItem.leftBarButtonItem = backButton
     }
     
-    @objc func backButtonTapped() {
+    private func setupViews() {
+        view.addSubview(routesTableView)
+        
+        NSLayoutConstraint.activate([
+            routesTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            routesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            routesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            routesTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
     

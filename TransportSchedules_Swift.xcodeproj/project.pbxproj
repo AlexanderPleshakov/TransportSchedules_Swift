@@ -34,6 +34,9 @@
 		160BC7DD2CA835A100FCE873 /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7DC2CA835A100FCE873 /* ResultsPresenter.swift */; };
 		160BC7E02CA835D500FCE873 /* ResultsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7DF2CA835D500FCE873 /* ResultsPresenterProtocol.swift */; };
 		160BC7E22CA835EE00FCE873 /* ResultsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7E12CA835EE00FCE873 /* ResultsViewControllerProtocol.swift */; };
+		160BC7E52CA83F0900FCE873 /* RouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7E42CA83F0900FCE873 /* RouteCell.swift */; };
+		160BC7E82CA846CE00FCE873 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7E72CA846CE00FCE873 /* Route.swift */; };
+		160BC7EA2CA8490200FCE873 /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7E92CA8490200FCE873 /* TransportType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		160BC7DC2CA835A100FCE873 /* ResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenter.swift; sourceTree = "<group>"; };
 		160BC7DF2CA835D500FCE873 /* ResultsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterProtocol.swift; sourceTree = "<group>"; };
 		160BC7E12CA835EE00FCE873 /* ResultsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerProtocol.swift; sourceTree = "<group>"; };
+		160BC7E42CA83F0900FCE873 /* RouteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCell.swift; sourceTree = "<group>"; };
+		160BC7E72CA846CE00FCE873 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		160BC7E92CA8490200FCE873 /* TransportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +216,8 @@
 		160BC7D92CA8356700FCE873 /* Results */ = {
 			isa = PBXGroup;
 			children = (
+				160BC7E62CA846BB00FCE873 /* Models */,
+				160BC7E32CA83EF400FCE873 /* Views */,
 				160BC7DE2CA835B700FCE873 /* Protocols */,
 				160BC7DA2CA8358200FCE873 /* ResultsViewController.swift */,
 				160BC7DC2CA835A100FCE873 /* ResultsPresenter.swift */,
@@ -224,6 +232,23 @@
 				160BC7E12CA835EE00FCE873 /* ResultsViewControllerProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		160BC7E32CA83EF400FCE873 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7E42CA83F0900FCE873 /* RouteCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		160BC7E62CA846BB00FCE873 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7E72CA846CE00FCE873 /* Route.swift */,
+				160BC7E92CA8490200FCE873 /* TransportType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,10 +326,12 @@
 				160BC7972CA5E4F600FCE873 /* CityButton.swift in Sources */,
 				160BC7992CA5E66C00FCE873 /* Colors.swift in Sources */,
 				160BC7C22CA70FF200FCE873 /* TransportSelectionPanel.swift in Sources */,
+				160BC7E52CA83F0900FCE873 /* RouteCell.swift in Sources */,
 				160BC7CA2CA760B200FCE873 /* SearchViewControllerProtocol.swift in Sources */,
 				160BC7D32CA7682D00FCE873 /* SearchType.swift in Sources */,
 				160BC7CC2CA7610C00FCE873 /* SearchPresenterProtocol.swift in Sources */,
 				160BC7DD2CA835A100FCE873 /* ResultsPresenter.swift in Sources */,
+				160BC7EA2CA8490200FCE873 /* TransportType.swift in Sources */,
 				160BC78D2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift in Sources */,
 				160BC7762CA5BD8300FCE873 /* ChooseRouteViewController.swift in Sources */,
 				160BC7D02CA766B100FCE873 /* ChoosePlaceViewDelegate.swift in Sources */,
@@ -313,6 +340,7 @@
 				160BC7722CA5BD8300FCE873 /* AppDelegate.swift in Sources */,
 				160BC7C62CA75AAC00FCE873 /* SearchViewController.swift in Sources */,
 				160BC7882CA5C23B00FCE873 /* ChooseRoutePresenter.swift in Sources */,
+				160BC7E82CA846CE00FCE873 /* Route.swift in Sources */,
 				160BC7C42CA7104300FCE873 /* SelectButton.swift in Sources */,
 				160BC7E22CA835EE00FCE873 /* ResultsViewControllerProtocol.swift in Sources */,
 				160BC7742CA5BD8300FCE873 /* SceneDelegate.swift in Sources */,

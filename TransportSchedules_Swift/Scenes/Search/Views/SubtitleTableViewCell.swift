@@ -1,6 +1,6 @@
 import UIKit
 
-class SubtitleTableViewCell: UITableViewCell {
+final class SubtitleTableViewCell: UITableViewCell {
     static let reuseId = "SubtitleTableViewCell"
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
