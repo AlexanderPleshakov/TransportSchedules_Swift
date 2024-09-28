@@ -30,7 +30,10 @@ final class SearchViewController: UIViewController {
     
     private let stationsTableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "tableViewCell")
+        tableView.register(
+            SubtitleTableViewCell.self,
+            forCellReuseIdentifier: SubtitleTableViewCell.reuseId
+        )
         tableView.backgroundColor = .white
         
         return tableView
@@ -88,13 +91,13 @@ final class SearchViewController: UIViewController {
             closeButton.widthAnchor.constraint(equalToConstant: 44),
             
             stationSearchBar.topAnchor.constraint(equalTo: searchTitleLabel.bottomAnchor, constant: 20),
-            stationSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            stationSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            stationSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            stationSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             stationSearchBar.heightAnchor.constraint(equalToConstant: 50),
             
             stationsTableView.topAnchor.constraint(equalTo: stationSearchBar.bottomAnchor),
-            stationsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            stationsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 16),
+            stationsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stationsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             stationsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
@@ -108,21 +111,29 @@ final class SearchViewController: UIViewController {
 // MARK: UITableViewDelegate
 
 extension SearchViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }
 
 // MARK: UITableViewDataSource
 
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return presenter.stations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: "tableViewCell",
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: SubtitleTableViewCell.reuseId,
             for: indexPath
-        )
+        ) as? SubtitleTableViewCell
+        else {
+            return UITableViewCell()
+        }
+        
+        cell.textLabel?.text = presenter.stations[indexPath.row].title
+        cell.detailTextLabel?.text = presenter.stations[indexPath.row].fullDescription
         
         return cell
     }

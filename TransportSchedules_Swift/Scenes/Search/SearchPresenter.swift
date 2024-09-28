@@ -5,6 +5,7 @@ final class SearchPresenter {
     
     weak var view: SearchViewControllerProtocol?
     private let searchType: SearchType
+    private(set) var stations: [Station] = []
     
     // MARK: Init
     

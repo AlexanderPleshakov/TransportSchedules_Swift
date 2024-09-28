@@ -6,4 +6,10 @@ struct Station {
     let countryName: String
     let regionName: String
     let settlementName: String
+    
+    var fullDescription: String {
+        [settlementName, regionName, countryName].filter { name in
+            !name.isEmpty
+        }.joined(separator: ", ")
+    }
 }

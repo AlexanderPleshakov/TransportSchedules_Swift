@@ -29,6 +29,7 @@
 		160BC7D02CA766B100FCE873 /* ChoosePlaceViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7CF2CA766B100FCE873 /* ChoosePlaceViewDelegate.swift */; };
 		160BC7D32CA7682D00FCE873 /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7D22CA7682D00FCE873 /* SearchType.swift */; };
 		160BC7D52CA82AF900FCE873 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7D42CA82AF900FCE873 /* Station.swift */; };
+		160BC7D82CA832EC00FCE873 /* SubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7D72CA832EC00FCE873 /* SubtitleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		160BC7CF2CA766B100FCE873 /* ChoosePlaceViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlaceViewDelegate.swift; sourceTree = "<group>"; };
 		160BC7D22CA7682D00FCE873 /* SearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
 		160BC7D42CA82AF900FCE873 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		160BC7D72CA832EC00FCE873 /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		160BC7C72CA75AE900FCE873 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				160BC7D62CA832E100FCE873 /* Views */,
 				160BC7D12CA7681E00FCE873 /* Models */,
 				160BC7C82CA7603600FCE873 /* Protocols */,
 				160BC7C52CA75AAC00FCE873 /* SearchViewController.swift */,
@@ -185,6 +188,14 @@
 				160BC7D42CA82AF900FCE873 /* Station.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		160BC7D62CA832E100FCE873 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7D72CA832EC00FCE873 /* SubtitleTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 				160BC7882CA5C23B00FCE873 /* ChooseRoutePresenter.swift in Sources */,
 				160BC7C42CA7104300FCE873 /* SelectButton.swift in Sources */,
 				160BC7742CA5BD8300FCE873 /* SceneDelegate.swift in Sources */,
+				160BC7D82CA832EC00FCE873 /* SubtitleTableViewCell.swift in Sources */,
 				160BC7CE2CA7618000FCE873 /* SearchPresenter.swift in Sources */,
 				160BC7952CA5CD3100FCE873 /* ChoosePlaceView.swift in Sources */,
 			);
