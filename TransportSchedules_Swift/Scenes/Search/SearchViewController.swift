@@ -39,6 +39,14 @@ final class SearchViewController: UIViewController {
         return tableView
     }()
     
+    private let progressHud: UIActivityIndicatorView = {
+        let progressHud = UIActivityIndicatorView(style: .medium)
+        progressHud.hidesWhenStopped = true
+        progressHud.color = .black
+        
+        return progressHud
+    }()
+    
     // MARK: Init
     
     init(presenter: SearchPresenterProtocol) {
@@ -72,10 +80,20 @@ final class SearchViewController: UIViewController {
         stationsTableView.delegate = self
         
         setupViews()
+        
+        if presenter.needLoading() {
+            progressHud.startAnimating()
+        }
     }
     
     private func setupViews() {
-        [searchTitleLabel, closeButton, stationSearchBar, stationsTableView].forEach {
+        [
+            searchTitleLabel,
+            closeButton,
+            stationSearchBar,
+            stationsTableView,
+            progressHud
+        ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
@@ -98,7 +116,10 @@ final class SearchViewController: UIViewController {
             stationsTableView.topAnchor.constraint(equalTo: stationSearchBar.bottomAnchor),
             stationsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             stationsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            stationsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            stationsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            progressHud.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            progressHud.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
@@ -142,5 +163,16 @@ extension SearchViewController: UITableViewDataSource {
 // MARK: SearchViewControllerProtocol
 
 extension SearchViewController: SearchViewControllerProtocol {
+    func stopProgressHud() {
+        progressHud.stopAnimating()
+    }
     
+    func startProgressHud(){
+        progressHud.startAnimating()
+    }
+    
+    func stationsWereLoaded() {
+        stopProgressHud()
+        stationsTableView.reloadData()
+    }
 }

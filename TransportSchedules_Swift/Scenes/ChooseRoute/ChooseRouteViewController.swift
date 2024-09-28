@@ -156,7 +156,9 @@ final class ChooseRouteViewController: UIViewController {
 
 extension ChooseRouteViewController: ChoosePlaceViewDelegate {
     func startSearch(searchType: SearchType) {
-        let searchViewController = SearchViewController(presenter: SearchPresenter(type: searchType))
+        let presenter = SearchPresenter(type: searchType)
+        let searchViewController = SearchViewController(presenter: presenter)
+        presenter.view = searchViewController
         searchViewController.modalPresentationStyle = .pageSheet
         present(searchViewController, animated: true)
     }

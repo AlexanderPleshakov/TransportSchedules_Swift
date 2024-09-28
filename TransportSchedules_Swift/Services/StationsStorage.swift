@@ -6,8 +6,10 @@ protocol StationsStorage {
 
 final class DefaultStationsStorage {
     static let shared = DefaultStationsStorage()
+    static let notificationName = Notification.Name("StationsLoaded")
     
     private(set) var stations: [Station] = []
+    private(set) var stationsIsLoaded: Bool = false
     
     private init() {}
     
@@ -53,5 +55,11 @@ final class DefaultStationsStorage {
                 }
             }
         }
+        stationsIsLoaded = true
+    
+        NotificationCenter.default.post(
+            name: DefaultStationsStorage.notificationName,
+            object: nil
+        )
     }
 }
