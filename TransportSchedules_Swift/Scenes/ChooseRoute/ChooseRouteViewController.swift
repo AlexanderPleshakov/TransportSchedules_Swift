@@ -78,6 +78,7 @@ final class ChooseRouteViewController: UIViewController {
         
         searchButton.addTarget(self, action: #selector(buttonSearchTapped), for: .touchUpInside)
         choosePlaceView.delegate = self
+        transportSelectionPanel.delegate = self
         
         setupViews()
     }
@@ -164,7 +165,7 @@ extension ChooseRouteViewController: ChoosePlaceViewDelegate {
     func startSearch(searchType: SearchType) {
         let searchViewController = ModulesAssembly.searchScreenBuilder(
             type: searchType,
-            transport: .any
+            transport: presenter.getSelectedTransport()
         )
         searchViewController.modalPresentationStyle = .pageSheet
         present(searchViewController, animated: true)
@@ -179,6 +180,12 @@ extension ChooseRouteViewController: UICalendarSelectionSingleDateDelegate {
         
         segmentedControl?.setDate(date: date)
         closeCalendarView()
+    }
+}
+
+extension ChooseRouteViewController: TransportSelectionPanelDelegate {
+    func transportSelectionPanel(didSelect transport: TransportType) {
+        presenter.select(transport: transport)
     }
 }
 

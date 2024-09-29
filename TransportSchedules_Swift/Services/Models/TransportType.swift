@@ -3,5 +3,5 @@ enum TransportType: String {
     case train = "train"
     case bus = "bus"
     case suburban = "suburban"
-    case any = ""
+    case any
 }

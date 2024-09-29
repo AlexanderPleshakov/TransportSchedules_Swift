@@ -62,8 +62,12 @@ extension SearchPresenter: SearchPresenterProtocol {
             stations = allStations
         } else {
             stations = allStations.filter {
-                $0.title.lowercased().contains(text.lowercased()) &&
-                $0.transportType == transport.rawValue
+                if transport == .any {
+                    $0.title.lowercased().contains(text.lowercased())
+                } else {
+                    $0.title.lowercased().contains(text.lowercased()) &&
+                    $0.transportType == transport.rawValue
+                }
             }
         }
         view?.reloadData()
