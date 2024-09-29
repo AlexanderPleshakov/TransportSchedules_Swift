@@ -43,6 +43,7 @@ final class RouteCell: UITableViewCell {
     
     func configure(_ route: Route) {
         selectionStyle = .none
+        backgroundColor = .white
         
         routeNameLabel.text = route.routeName
         transportName.text = route.routeNumber

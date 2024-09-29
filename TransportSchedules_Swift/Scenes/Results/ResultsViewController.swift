@@ -23,6 +23,16 @@ final class ResultsViewController: UIViewController {
         return progressHud
     }()
     
+    private let stubLabel: UILabel = {
+        let label = UILabel()
+        label.text = NSLocalizedString("stub", comment: "")
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = true
+        label.textColor = .black
+        
+        return label
+    }( )
+    
     // MARK: Init
     
     init(presenter: ResultsPresenterProtocol) {
@@ -48,6 +58,7 @@ final class ResultsViewController: UIViewController {
     
     private func configure() {
         view.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .black
         
         let backButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(backButtonTapped))
         backButton.image = UIImage(systemName: "chevron.left")
@@ -63,6 +74,7 @@ final class ResultsViewController: UIViewController {
     private func setupViews() {
         view.addSubview(routesTableView)
         view.addSubview(progressHud)
+        view.addSubview(stubLabel)
         
         NSLayoutConstraint.activate([
             routesTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -71,7 +83,10 @@ final class ResultsViewController: UIViewController {
             routesTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
             progressHud.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            progressHud.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            progressHud.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            stubLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stubLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
     
@@ -95,6 +110,15 @@ extension ResultsViewController: ResultsViewControllerProtocol {
     
     func startProgressHud(){
         progressHud.startAnimating()
+    }
+    
+    func showStub() {
+        stopProgressHud()
+        stubLabel.isHidden = false
+    }
+    
+    func hideStub() {
+        stubLabel.isHidden = true
     }
 }
 

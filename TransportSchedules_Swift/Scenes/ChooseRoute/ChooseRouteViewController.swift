@@ -82,6 +82,7 @@ final class ChooseRouteViewController: UIViewController {
         segmentedControl?.delegate = self
         
         setupViews()
+        lockSearchButton()
     }
     
     private func setupViews() {
@@ -158,7 +159,17 @@ final class ChooseRouteViewController: UIViewController {
 
 // MARK: ChooseRouteViewControllerProtocol
 
-extension ChooseRouteViewController: ChooseRouteViewControllerProtocol {}
+extension ChooseRouteViewController: ChooseRouteViewControllerProtocol {
+    func lockSearchButton() {
+        searchButton.isEnabled = false
+        searchButton.backgroundColor = .secondaryGray
+    }
+    
+    func unlockSearchButton() {
+        searchButton.isEnabled = true
+        searchButton.backgroundColor = .orange
+    }
+}
 
 // MARK: ChoosePlaceViewDelegate
 

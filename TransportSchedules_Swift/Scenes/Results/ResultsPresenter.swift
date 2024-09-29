@@ -127,6 +127,9 @@ extension ResultsPresenter: ResultsPresenterProtocol {
                     self?.view?.stopProgressHud()
                 }
             case .failure(let failure):
+                DispatchQueue.main.async { [weak self] in
+                    self?.view?.showStub()
+                }
                 print(failure)
             }
         }

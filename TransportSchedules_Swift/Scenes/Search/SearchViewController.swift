@@ -9,7 +9,6 @@ final class SearchViewController: UIViewController {
     private let searchTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 22)
-        label.textColor = .black
         
         return label
     }()
@@ -25,6 +24,7 @@ final class SearchViewController: UIViewController {
     private let stationSearchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.backgroundImage = UIImage()
+        searchBar.tintColor = .black
         
         return searchBar
     }()
@@ -180,6 +180,8 @@ extension SearchViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.textLabel?.textColor = .black
+        cell.detailTextLabel?.textColor = .black
         cell.textLabel?.text = presenter.stations[indexPath.row].title
         cell.detailTextLabel?.text = presenter.stations[indexPath.row].fullDescription
         

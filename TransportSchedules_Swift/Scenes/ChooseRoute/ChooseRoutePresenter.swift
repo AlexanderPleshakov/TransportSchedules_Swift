@@ -27,6 +27,12 @@ final class ChooseRoutePresenter: ChooseRoutePresenterProtocol {
         case .to:
             toStation = station
         }
+        
+        if fromStation != nil && toStation != nil {
+            view?.unlockSearchButton()
+        } else {
+            view?.lockSearchButton()
+        }
     }
     
     func switchStations() {
