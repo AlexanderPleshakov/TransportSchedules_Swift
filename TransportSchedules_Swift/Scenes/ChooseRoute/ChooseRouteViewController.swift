@@ -172,6 +172,10 @@ extension ChooseRouteViewController: ChoosePlaceViewDelegate {
         searchViewController.modalPresentationStyle = .pageSheet
         present(searchViewController, animated: true)
     }
+    
+    func switchStations() {
+        presenter.switchStations()
+    }
 }
 
 // MARK: UICalendarSelectionSingleDateDelegate

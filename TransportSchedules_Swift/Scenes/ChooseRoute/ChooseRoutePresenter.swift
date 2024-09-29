@@ -27,4 +27,8 @@ final class ChooseRoutePresenter: ChooseRoutePresenterProtocol {
             toStation = station
         }
     }
+    
+    func switchStations() {
+        (fromStation, toStation) = (toStation, fromStation)
+    }
 }

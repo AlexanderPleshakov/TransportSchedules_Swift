@@ -70,7 +70,7 @@ final class ChoosePlaceView: UIView {
         
         switchButton.addTarget(
             self,
-            action: #selector(buttonSwitchCitiesTapped),
+            action: #selector(buttonSwitchStationsTapped),
             for: .touchUpInside
         )
         fromButton.addTarget(self, action: #selector(startSearchFrom), for: .touchUpInside)
@@ -107,7 +107,7 @@ final class ChoosePlaceView: UIView {
         ])
     }
     
-    @objc private func buttonSwitchCitiesTapped() {
+    @objc private func buttonSwitchStationsTapped() {
         let fromCity = fromButton.currentTitle
         let toCity = toButton.currentTitle
         
@@ -121,6 +121,8 @@ final class ChoosePlaceView: UIView {
             fromButton.setTitle(fromButton.firstTitle, for: .normal)
             toButton.setTitle(fromCity, for: .normal)
         }
+        
+        delegate?.switchStations()
     }
     
     @objc private func startSearchFrom() {
