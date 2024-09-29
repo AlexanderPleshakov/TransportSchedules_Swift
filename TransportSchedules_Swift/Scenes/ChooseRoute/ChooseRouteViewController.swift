@@ -78,8 +78,11 @@ final class ChooseRouteViewController: UIViewController {
         
         searchButton.addTarget(self, action: #selector(buttonSearchTapped), for: .touchUpInside)
         choosePlaceView.delegate = self
+        transportSelectionPanel.delegate = self
+        segmentedControl?.delegate = self
         
         setupViews()
+        lockSearchButton()
     }
     
     private func setupViews() {
@@ -147,8 +150,24 @@ final class ChooseRouteViewController: UIViewController {
     }
     
     @objc private func buttonSearchTapped() {
-        let resultsViewController = ResultsViewController(presenter: ResultsPresenter())
-        navigationController?.pushViewController(resultsViewController, animated: true)
+        navigationController?.pushViewController(
+            ModulesAssembly.resultsScreenBuilder(routeRequestInfo: presenter.getRouteInfo()),
+            animated: true
+        )
+    }
+}
+
+// MARK: ChooseRouteViewControllerProtocol
+
+extension ChooseRouteViewController: ChooseRouteViewControllerProtocol {
+    func lockSearchButton() {
+        searchButton.isEnabled = false
+        searchButton.backgroundColor = .secondaryGray
+    }
+    
+    func unlockSearchButton() {
+        searchButton.isEnabled = true
+        searchButton.backgroundColor = .orange
     }
 }
 
@@ -156,9 +175,18 @@ final class ChooseRouteViewController: UIViewController {
 
 extension ChooseRouteViewController: ChoosePlaceViewDelegate {
     func startSearch(searchType: SearchType) {
-        let searchViewController = SearchViewController(presenter: SearchPresenter(type: searchType))
+        let searchViewController = ModulesAssembly.searchScreenBuilder(
+            type: searchType,
+            transport: presenter.getSelectedTransport(),
+            delegate: self,
+            station: presenter.getStationForSearch(with: searchType)
+        )
         searchViewController.modalPresentationStyle = .pageSheet
         present(searchViewController, animated: true)
+    }
+    
+    func switchStations() {
+        presenter.switchStations()
     }
 }
 
@@ -169,8 +197,31 @@ extension ChooseRouteViewController: UICalendarSelectionSingleDateDelegate {
         guard let date = dateComponents?.date else { return }
         
         segmentedControl?.setDate(date: date)
+        presenter.setDate(date: date)
         closeCalendarView()
     }
 }
 
+// MARK: TransportSelectionPanelDelegate
+
+extension ChooseRouteViewController: TransportSelectionPanelDelegate {
+    func transportSelectionPanel(didSelect transport: TransportType) {
+        presenter.select(transport: transport)
+    }
+}
+
+// MARK: SearchViewControllerDelegate
+
+extension ChooseRouteViewController: SearchViewControllerDelegate {
+    func searchViewController(didChange station: Station?, type: SearchType) {
+        choosePlaceView.changeTitle(type: type, text: station?.title ?? "")
+        presenter.selectStation(station, with: type)
+    }
+}
+
+extension ChooseRouteViewController: SegmentDayControlDelegate {
+    func segmentDayControl(didSelect day: RouteDay) {
+        presenter.setDate(when: day)
+    }
+}
 

@@ -8,6 +8,10 @@
 import UIKit
 
 final class TransportSelectionPanel: UIView {
+    // MARK: Properties
+    
+    weak var delegate: TransportSelectionPanelDelegate?
+    
     private let anyButton = SelectButton(
         title: NSLocalizedString(
             "any",
@@ -79,6 +83,8 @@ final class TransportSelectionPanel: UIView {
         lightrailButton.addTarget(self, action: #selector(buttonLightrailTapped), for: .touchUpInside)
         busButton.addTarget(self, action: #selector(buttonBusTapped), for: .touchUpInside)
         
+        anyButton.select()
+        
         let mainHStack = UIStackView(arrangedSubviews: buttons)
         
         mainHStack.axis = .horizontal
@@ -115,6 +121,7 @@ final class TransportSelectionPanel: UIView {
         if !anyButton.isActive {
             deselectButtons()
             anyButton.select()
+            delegate?.transportSelectionPanel(didSelect: .any)
         }
     }
     
@@ -122,6 +129,7 @@ final class TransportSelectionPanel: UIView {
         if !airplaneButton.isActive {
             deselectButtons()
             airplaneButton.select()
+            delegate?.transportSelectionPanel(didSelect: .plane)
         }
     }
     
@@ -129,6 +137,7 @@ final class TransportSelectionPanel: UIView {
         if !trainButton.isActive {
             deselectButtons()
             trainButton.select()
+            delegate?.transportSelectionPanel(didSelect: .train)
         }
     }
     
@@ -136,6 +145,7 @@ final class TransportSelectionPanel: UIView {
         if !lightrailButton.isActive {
             deselectButtons()
             lightrailButton.select()
+            delegate?.transportSelectionPanel(didSelect: .train)
         }
     }
     
@@ -143,6 +153,7 @@ final class TransportSelectionPanel: UIView {
         if !busButton.isActive {
             deselectButtons()
             busButton.select()
+            delegate?.transportSelectionPanel(didSelect: .bus)
         }
     }
 }

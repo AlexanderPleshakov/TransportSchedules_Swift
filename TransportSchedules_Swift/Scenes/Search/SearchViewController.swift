@@ -4,11 +4,11 @@ final class SearchViewController: UIViewController {
     // MARK: Properties
     
     private let presenter: SearchPresenterProtocol
+    weak var delegate: SearchViewControllerDelegate?
     
     private let searchTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 22)
-        label.textColor = .black
         
         return label
     }()
@@ -24,6 +24,7 @@ final class SearchViewController: UIViewController {
     private let stationSearchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.backgroundImage = UIImage()
+        searchBar.tintColor = .black
         
         return searchBar
     }()
@@ -39,11 +40,21 @@ final class SearchViewController: UIViewController {
         return tableView
     }()
     
+    private let progressHud: UIActivityIndicatorView = {
+        let progressHud = UIActivityIndicatorView(style: .medium)
+        progressHud.hidesWhenStopped = true
+        progressHud.color = .black
+        
+        return progressHud
+    }()
+    
     // MARK: Init
     
     init(presenter: SearchPresenterProtocol) {
         self.presenter = presenter
         
+        presenter.filterStations(on: presenter.selectedStationName)
+        stationSearchBar.text = presenter.selectedStationName
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -59,6 +70,17 @@ final class SearchViewController: UIViewController {
         configure()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        if stationSearchBar.text == "" || stationSearchBar.text == nil {
+            delegate?.searchViewController(
+                didChange: nil,
+                type: presenter.searchType
+            )
+        }
+    }
+    
     // MARK: Methods
     
     private func configure() {
@@ -70,12 +92,23 @@ final class SearchViewController: UIViewController {
         
         stationsTableView.dataSource = self
         stationsTableView.delegate = self
+        stationSearchBar.delegate = self
         
         setupViews()
+        
+        if presenter.needLoading() {
+            progressHud.startAnimating()
+        }
     }
     
     private func setupViews() {
-        [searchTitleLabel, closeButton, stationSearchBar, stationsTableView].forEach {
+        [
+            searchTitleLabel,
+            closeButton,
+            stationSearchBar,
+            stationsTableView,
+            progressHud
+        ].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
@@ -98,7 +131,10 @@ final class SearchViewController: UIViewController {
             stationsTableView.topAnchor.constraint(equalTo: stationSearchBar.bottomAnchor),
             stationsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             stationsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            stationsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            stationsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            progressHud.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            progressHud.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
@@ -113,6 +149,18 @@ final class SearchViewController: UIViewController {
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let station = presenter.stations[indexPath.row]
+        stationSearchBar.text = station.title
+        delegate?.searchViewController(
+            didChange: station,
+            type: presenter.searchType
+        )
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        self.dismiss(animated: true)
     }
 }
 
@@ -132,6 +180,8 @@ extension SearchViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.textLabel?.textColor = .black
+        cell.detailTextLabel?.textColor = .black
         cell.textLabel?.text = presenter.stations[indexPath.row].title
         cell.detailTextLabel?.text = presenter.stations[indexPath.row].fullDescription
         
@@ -142,5 +192,26 @@ extension SearchViewController: UITableViewDataSource {
 // MARK: SearchViewControllerProtocol
 
 extension SearchViewController: SearchViewControllerProtocol {
+    func stopProgressHud() {
+        progressHud.stopAnimating()
+    }
     
+    func startProgressHud(){
+        progressHud.startAnimating()
+    }
+    
+    func stationsWereLoaded() {
+        stopProgressHud()
+        stationsTableView.reloadData()
+    }
+    
+    func reloadData() {
+        stationsTableView.reloadData()
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter.filterStations(on: searchText)
+    }
 }

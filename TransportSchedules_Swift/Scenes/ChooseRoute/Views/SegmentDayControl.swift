@@ -1,9 +1,5 @@
 import UIKit
 
-protocol SegmentDayControlDelegate: AnyObject {
-    
-}
-
 final class SegmentDayControl: UIView {
     weak var delegate: SegmentDayControlDelegate?
     
@@ -96,6 +92,8 @@ final class SegmentDayControl: UIView {
             mainHStack.trailingAnchor.constraint(equalTo: trailingAnchor),
             mainHStack.heightAnchor.constraint(equalToConstant: 50)
         ])
+        
+        todayButton.select()
     }
     
     private func deselectButtons() {
@@ -118,6 +116,8 @@ final class SegmentDayControl: UIView {
             deselectButtons()
             tomorrowButton.select()
         }
+        
+        delegate?.segmentDayControl(didSelect: .tomorrow)
     }
     
     @objc private func buttonTodayTapped() {
@@ -125,5 +125,7 @@ final class SegmentDayControl: UIView {
             deselectButtons()
             todayButton.select()
         }
+        
+        delegate?.segmentDayControl(didSelect: .today)
     }
 }

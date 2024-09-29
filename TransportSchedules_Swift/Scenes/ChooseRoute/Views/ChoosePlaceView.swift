@@ -16,14 +16,14 @@ final class ChoosePlaceView: UIView {
         return button
     }()
     
-    private let fromButton: CityButton = CityButton(
+    private let fromButton: StationButton = StationButton(
         title: NSLocalizedString(
             "from",
             comment: ""
         )
     )
     
-    private let toButton: CityButton = CityButton(
+    private let toButton: StationButton = StationButton(
         title: NSLocalizedString(
             "to",
             comment: ""
@@ -51,6 +51,18 @@ final class ChoosePlaceView: UIView {
     
     // MARK: Methods
     
+    func changeTitle(type: SearchType, text: String) {
+        let button = type == .from ? fromButton : toButton
+        
+        if !text.isEmpty {
+            button.setTitle(text, for: .normal)
+            button.setTitleColor(.black, for: .normal)
+        } else {
+            button.setTitle(button.firstTitle, for: .normal)
+            button.setTitleColor(.placeholderGray, for: .normal)
+        }
+    }
+    
     private func configure() {
         layer.borderColor = UIColor.secondaryGray.cgColor
         layer.cornerRadius = 6
@@ -58,7 +70,7 @@ final class ChoosePlaceView: UIView {
         
         switchButton.addTarget(
             self,
-            action: #selector(buttonSwitchCitiesTapped),
+            action: #selector(buttonSwitchStationsTapped),
             for: .touchUpInside
         )
         fromButton.addTarget(self, action: #selector(startSearchFrom), for: .touchUpInside)
@@ -95,7 +107,7 @@ final class ChoosePlaceView: UIView {
         ])
     }
     
-    @objc private func buttonSwitchCitiesTapped() {
+    @objc private func buttonSwitchStationsTapped() {
         let fromCity = fromButton.currentTitle
         let toCity = toButton.currentTitle
         
@@ -109,6 +121,8 @@ final class ChoosePlaceView: UIView {
             fromButton.setTitle(fromButton.firstTitle, for: .normal)
             toButton.setTitle(fromCity, for: .normal)
         }
+        
+        delegate?.switchStations()
     }
     
     @objc private func startSearchFrom() {

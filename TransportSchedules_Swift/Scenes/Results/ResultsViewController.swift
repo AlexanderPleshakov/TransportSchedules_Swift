@@ -14,6 +14,25 @@ final class ResultsViewController: UIViewController {
         return table
     }()
     
+    private let progressHud: UIActivityIndicatorView = {
+        let progressHud = UIActivityIndicatorView(style: .medium)
+        progressHud.hidesWhenStopped = true
+        progressHud.color = .black
+        progressHud.translatesAutoresizingMaskIntoConstraints = false
+        
+        return progressHud
+    }()
+    
+    private let stubLabel: UILabel = {
+        let label = UILabel()
+        label.text = NSLocalizedString("stub", comment: "")
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = true
+        label.textColor = .black
+        
+        return label
+    }( )
+    
     // MARK: Init
     
     init(presenter: ResultsPresenterProtocol) {
@@ -32,13 +51,14 @@ final class ResultsViewController: UIViewController {
         super.viewDidLoad()
         
         configure()
+        presenter.setup()
     }
     
     // MARK: Methods
     
     private func configure() {
-        title = "Москва - Тула"
         view.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .black
         
         let backButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(backButtonTapped))
         backButton.image = UIImage(systemName: "chevron.left")
@@ -53,12 +73,20 @@ final class ResultsViewController: UIViewController {
     
     private func setupViews() {
         view.addSubview(routesTableView)
+        view.addSubview(progressHud)
+        view.addSubview(stubLabel)
         
         NSLayoutConstraint.activate([
             routesTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             routesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             routesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            routesTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            routesTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            progressHud.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            progressHud.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            stubLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stubLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
     
@@ -71,7 +99,27 @@ final class ResultsViewController: UIViewController {
 // MARK: ResultsViewControllerProtocol
 
 extension ResultsViewController: ResultsViewControllerProtocol {
+    func reloadData(title: String) {
+        routesTableView.reloadData()
+        self.title = title
+    }
     
+    func stopProgressHud() {
+        progressHud.stopAnimating()
+    }
+    
+    func startProgressHud(){
+        progressHud.startAnimating()
+    }
+    
+    func showStub() {
+        stopProgressHud()
+        stubLabel.isHidden = false
+    }
+    
+    func hideStub() {
+        stubLabel.isHidden = true
+    }
 }
 
 // MARK: UITableViewDelegate

@@ -17,7 +17,7 @@
 		160BC78F2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC78E2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift */; };
 		160BC7922CA5CA8300FCE873 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 160BC7902CA5CA8300FCE873 /* Localizable.strings */; };
 		160BC7952CA5CD3100FCE873 /* ChoosePlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7942CA5CD3100FCE873 /* ChoosePlaceView.swift */; };
-		160BC7972CA5E4F600FCE873 /* CityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7962CA5E4F600FCE873 /* CityButton.swift */; };
+		160BC7972CA5E4F600FCE873 /* StationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7962CA5E4F600FCE873 /* StationButton.swift */; };
 		160BC7992CA5E66C00FCE873 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7982CA5E66C00FCE873 /* Colors.swift */; };
 		160BC79B2CA5EBEE00FCE873 /* SegmentDayControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC79A2CA5EBEE00FCE873 /* SegmentDayControl.swift */; };
 		160BC7C22CA70FF200FCE873 /* TransportSelectionPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7C12CA70FF200FCE873 /* TransportSelectionPanel.swift */; };
@@ -36,7 +36,23 @@
 		160BC7E22CA835EE00FCE873 /* ResultsViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7E12CA835EE00FCE873 /* ResultsViewControllerProtocol.swift */; };
 		160BC7E52CA83F0900FCE873 /* RouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7E42CA83F0900FCE873 /* RouteCell.swift */; };
 		160BC7E82CA846CE00FCE873 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7E72CA846CE00FCE873 /* Route.swift */; };
-		160BC7EA2CA8490200FCE873 /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7E92CA8490200FCE873 /* TransportType.swift */; };
+		160BC7EA2CA8490200FCE873 /* RouteTransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7E92CA8490200FCE873 /* RouteTransportType.swift */; };
+		160BC7ED2CA88D7C00FCE873 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7EC2CA88D7C00FCE873 /* NetworkClient.swift */; };
+		160BC7EF2CA88F8800FCE873 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7EE2CA88F8800FCE873 /* NetworkRequest.swift */; };
+		160BC7F12CA88FB800FCE873 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7F02CA88FB800FCE873 /* NetworkTask.swift */; };
+		160BC7F32CA898F100FCE873 /* StationsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7F22CA898F100FCE873 /* StationsStorage.swift */; };
+		160BC7F52CA89EB400FCE873 /* StationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7F42CA89EB400FCE873 /* StationsRequest.swift */; };
+		160BC7F82CA8A0F900FCE873 /* StationsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7F72CA8A0F900FCE873 /* StationsDTO.swift */; };
+		160BC7FB2CA8C6D300FCE873 /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7FA2CA8C6D300FCE873 /* TransportType.swift */; };
+		160BC7FE2CA8CC4600FCE873 /* ModulesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7FD2CA8CC4600FCE873 /* ModulesAssembly.swift */; };
+		160BC8002CA8CF4900FCE873 /* TransportSelectionPanelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7FF2CA8CF4900FCE873 /* TransportSelectionPanelDelegate.swift */; };
+		160BC8022CA8D5A900FCE873 /* SearchViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC8012CA8D5A900FCE873 /* SearchViewControllerDelegate.swift */; };
+		160BC8042CA97D0B00FCE873 /* RouteDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC8032CA97D0B00FCE873 /* RouteDay.swift */; };
+		160BC8072CA97D4D00FCE873 /* SegmentDayControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC8062CA97D4D00FCE873 /* SegmentDayControlDelegate.swift */; };
+		160BC8092CA9838600FCE873 /* RouteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC8082CA9838600FCE873 /* RouteDTO.swift */; };
+		160BC80B2CA9878A00FCE873 /* ResultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC80A2CA9878A00FCE873 /* ResultsService.swift */; };
+		160BC80D2CA98C4C00FCE873 /* ResultsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC80C2CA98C4C00FCE873 /* ResultsRequest.swift */; };
+		160BC8102CA99E2B00FCE873 /* RouteRequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC80F2CA99E2B00FCE873 /* RouteRequestInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +68,7 @@
 		160BC78E2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRoutePresenterProtocol.swift; sourceTree = "<group>"; };
 		160BC7912CA5CA8300FCE873 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		160BC7942CA5CD3100FCE873 /* ChoosePlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlaceView.swift; sourceTree = "<group>"; };
-		160BC7962CA5E4F600FCE873 /* CityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityButton.swift; sourceTree = "<group>"; };
+		160BC7962CA5E4F600FCE873 /* StationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationButton.swift; sourceTree = "<group>"; };
 		160BC7982CA5E66C00FCE873 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		160BC79A2CA5EBEE00FCE873 /* SegmentDayControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentDayControl.swift; sourceTree = "<group>"; };
 		160BC7C12CA70FF200FCE873 /* TransportSelectionPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportSelectionPanel.swift; sourceTree = "<group>"; };
@@ -71,7 +87,23 @@
 		160BC7E12CA835EE00FCE873 /* ResultsViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerProtocol.swift; sourceTree = "<group>"; };
 		160BC7E42CA83F0900FCE873 /* RouteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCell.swift; sourceTree = "<group>"; };
 		160BC7E72CA846CE00FCE873 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
-		160BC7E92CA8490200FCE873 /* TransportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportType.swift; sourceTree = "<group>"; };
+		160BC7E92CA8490200FCE873 /* RouteTransportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTransportType.swift; sourceTree = "<group>"; };
+		160BC7EC2CA88D7C00FCE873 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		160BC7EE2CA88F8800FCE873 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		160BC7F02CA88FB800FCE873 /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
+		160BC7F22CA898F100FCE873 /* StationsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsStorage.swift; sourceTree = "<group>"; };
+		160BC7F42CA89EB400FCE873 /* StationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsRequest.swift; sourceTree = "<group>"; };
+		160BC7F72CA8A0F900FCE873 /* StationsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsDTO.swift; sourceTree = "<group>"; };
+		160BC7FA2CA8C6D300FCE873 /* TransportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportType.swift; sourceTree = "<group>"; };
+		160BC7FD2CA8CC4600FCE873 /* ModulesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesAssembly.swift; sourceTree = "<group>"; };
+		160BC7FF2CA8CF4900FCE873 /* TransportSelectionPanelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportSelectionPanelDelegate.swift; sourceTree = "<group>"; };
+		160BC8012CA8D5A900FCE873 /* SearchViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerDelegate.swift; sourceTree = "<group>"; };
+		160BC8032CA97D0B00FCE873 /* RouteDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDay.swift; sourceTree = "<group>"; };
+		160BC8062CA97D4D00FCE873 /* SegmentDayControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentDayControlDelegate.swift; sourceTree = "<group>"; };
+		160BC8082CA9838600FCE873 /* RouteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDTO.swift; sourceTree = "<group>"; };
+		160BC80A2CA9878A00FCE873 /* ResultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsService.swift; sourceTree = "<group>"; };
+		160BC80C2CA98C4C00FCE873 /* ResultsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsRequest.swift; sourceTree = "<group>"; };
+		160BC80F2CA99E2B00FCE873 /* RouteRequestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRequestInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +136,9 @@
 		160BC7702CA5BD8300FCE873 /* TransportSchedules_Swift */ = {
 			isa = PBXGroup;
 			children = (
-				160BC7892CA5C2D100FCE873 /* Scenes */,
 				160BC7862CA5C11C00FCE873 /* App */,
+				160BC7892CA5C2D100FCE873 /* Scenes */,
+				160BC7EB2CA88D6C00FCE873 /* Services */,
 				160BC7852CA5C0A900FCE873 /* Resources */,
 			);
 			path = TransportSchedules_Swift;
@@ -145,6 +178,7 @@
 		160BC78A2CA5C2D900FCE873 /* ChooseRoute */ = {
 			isa = PBXGroup;
 			children = (
+				160BC8052CA97D1200FCE873 /* Models */,
 				160BC7932CA5CD0500FCE873 /* Views */,
 				160BC78B2CA5C2FC00FCE873 /* Protocols */,
 				160BC7752CA5BD8300FCE873 /* ChooseRouteViewController.swift */,
@@ -159,6 +193,8 @@
 				160BC78C2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift */,
 				160BC78E2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift */,
 				160BC7CF2CA766B100FCE873 /* ChoosePlaceViewDelegate.swift */,
+				160BC7FF2CA8CF4900FCE873 /* TransportSelectionPanelDelegate.swift */,
+				160BC8062CA97D4D00FCE873 /* SegmentDayControlDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -167,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				160BC7942CA5CD3100FCE873 /* ChoosePlaceView.swift */,
-				160BC7962CA5E4F600FCE873 /* CityButton.swift */,
+				160BC7962CA5E4F600FCE873 /* StationButton.swift */,
 				160BC79A2CA5EBEE00FCE873 /* SegmentDayControl.swift */,
 				160BC7C12CA70FF200FCE873 /* TransportSelectionPanel.swift */,
 				160BC7C32CA7104300FCE873 /* SelectButton.swift */,
@@ -192,6 +228,7 @@
 			children = (
 				160BC7C92CA760B200FCE873 /* SearchViewControllerProtocol.swift */,
 				160BC7CB2CA7610C00FCE873 /* SearchPresenterProtocol.swift */,
+				160BC8012CA8D5A900FCE873 /* SearchViewControllerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -246,9 +283,68 @@
 			isa = PBXGroup;
 			children = (
 				160BC7E72CA846CE00FCE873 /* Route.swift */,
-				160BC7E92CA8490200FCE873 /* TransportType.swift */,
+				160BC7E92CA8490200FCE873 /* RouteTransportType.swift */,
+				160BC80F2CA99E2B00FCE873 /* RouteRequestInfo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		160BC7EB2CA88D6C00FCE873 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7F92CA8C6C300FCE873 /* Models */,
+				160BC7F62CA8A0DF00FCE873 /* DTOs */,
+				160BC7FC2CA8CBC500FCE873 /* Network */,
+				160BC7F22CA898F100FCE873 /* StationsStorage.swift */,
+				160BC7FD2CA8CC4600FCE873 /* ModulesAssembly.swift */,
+				160BC80A2CA9878A00FCE873 /* ResultsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		160BC7F62CA8A0DF00FCE873 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7F72CA8A0F900FCE873 /* StationsDTO.swift */,
+				160BC8082CA9838600FCE873 /* RouteDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		160BC7F92CA8C6C300FCE873 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7FA2CA8C6D300FCE873 /* TransportType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		160BC7FC2CA8CBC500FCE873 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7EC2CA88D7C00FCE873 /* NetworkClient.swift */,
+				160BC7F02CA88FB800FCE873 /* NetworkTask.swift */,
+				160BC80E2CA98C6500FCE873 /* Requests */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		160BC8052CA97D1200FCE873 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				160BC8032CA97D0B00FCE873 /* RouteDay.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		160BC80E2CA98C6500FCE873 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7EE2CA88F8800FCE873 /* NetworkRequest.swift */,
+				160BC7F42CA89EB400FCE873 /* StationsRequest.swift */,
+				160BC80C2CA98C4C00FCE873 /* ResultsRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,33 +418,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160BC8072CA97D4D00FCE873 /* SegmentDayControlDelegate.swift in Sources */,
 				160BC79B2CA5EBEE00FCE873 /* SegmentDayControl.swift in Sources */,
-				160BC7972CA5E4F600FCE873 /* CityButton.swift in Sources */,
+				160BC7F12CA88FB800FCE873 /* NetworkTask.swift in Sources */,
+				160BC8042CA97D0B00FCE873 /* RouteDay.swift in Sources */,
+				160BC7972CA5E4F600FCE873 /* StationButton.swift in Sources */,
+				160BC7F32CA898F100FCE873 /* StationsStorage.swift in Sources */,
 				160BC7992CA5E66C00FCE873 /* Colors.swift in Sources */,
 				160BC7C22CA70FF200FCE873 /* TransportSelectionPanel.swift in Sources */,
 				160BC7E52CA83F0900FCE873 /* RouteCell.swift in Sources */,
 				160BC7CA2CA760B200FCE873 /* SearchViewControllerProtocol.swift in Sources */,
 				160BC7D32CA7682D00FCE873 /* SearchType.swift in Sources */,
 				160BC7CC2CA7610C00FCE873 /* SearchPresenterProtocol.swift in Sources */,
+				160BC7F82CA8A0F900FCE873 /* StationsDTO.swift in Sources */,
 				160BC7DD2CA835A100FCE873 /* ResultsPresenter.swift in Sources */,
-				160BC7EA2CA8490200FCE873 /* TransportType.swift in Sources */,
+				160BC7EA2CA8490200FCE873 /* RouteTransportType.swift in Sources */,
 				160BC78D2CA5C31300FCE873 /* ChooseRouteViewControllerProtocol.swift in Sources */,
+				160BC7ED2CA88D7C00FCE873 /* NetworkClient.swift in Sources */,
+				160BC7F52CA89EB400FCE873 /* StationsRequest.swift in Sources */,
 				160BC7762CA5BD8300FCE873 /* ChooseRouteViewController.swift in Sources */,
+				160BC80B2CA9878A00FCE873 /* ResultsService.swift in Sources */,
 				160BC7D02CA766B100FCE873 /* ChoosePlaceViewDelegate.swift in Sources */,
 				160BC7D52CA82AF900FCE873 /* Station.swift in Sources */,
+				160BC8102CA99E2B00FCE873 /* RouteRequestInfo.swift in Sources */,
+				160BC7FE2CA8CC4600FCE873 /* ModulesAssembly.swift in Sources */,
+				160BC7FB2CA8C6D300FCE873 /* TransportType.swift in Sources */,
 				160BC78F2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift in Sources */,
 				160BC7722CA5BD8300FCE873 /* AppDelegate.swift in Sources */,
 				160BC7C62CA75AAC00FCE873 /* SearchViewController.swift in Sources */,
 				160BC7882CA5C23B00FCE873 /* ChooseRoutePresenter.swift in Sources */,
 				160BC7E82CA846CE00FCE873 /* Route.swift in Sources */,
+				160BC8002CA8CF4900FCE873 /* TransportSelectionPanelDelegate.swift in Sources */,
 				160BC7C42CA7104300FCE873 /* SelectButton.swift in Sources */,
 				160BC7E22CA835EE00FCE873 /* ResultsViewControllerProtocol.swift in Sources */,
+				160BC80D2CA98C4C00FCE873 /* ResultsRequest.swift in Sources */,
 				160BC7742CA5BD8300FCE873 /* SceneDelegate.swift in Sources */,
 				160BC7DB2CA8358200FCE873 /* ResultsViewController.swift in Sources */,
 				160BC7D82CA832EC00FCE873 /* SubtitleTableViewCell.swift in Sources */,
 				160BC7CE2CA7618000FCE873 /* SearchPresenter.swift in Sources */,
 				160BC7952CA5CD3100FCE873 /* ChoosePlaceView.swift in Sources */,
+				160BC8022CA8D5A900FCE873 /* SearchViewControllerDelegate.swift in Sources */,
 				160BC7E02CA835D500FCE873 /* ResultsPresenterProtocol.swift in Sources */,
+				160BC7EF2CA88F8800FCE873 /* NetworkRequest.swift in Sources */,
+				160BC8092CA9838600FCE873 /* RouteDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

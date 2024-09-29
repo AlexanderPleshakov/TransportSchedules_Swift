@@ -42,8 +42,11 @@ final class RouteCell: UITableViewCell {
     // MARK: Methods
     
     func configure(_ route: Route) {
+        selectionStyle = .none
+        backgroundColor = .white
+        
         routeNameLabel.text = route.routeName
-        transportName.text = route.transportName
+        transportName.text = route.routeNumber
         transportMark.text = route.transportMark
         startDateLabel.text = route.startDate
         finishDateLabel.text = route.finishDate
@@ -52,21 +55,6 @@ final class RouteCell: UITableViewCell {
         startStationLabel.text = route.startStation
         finishStationLabel.text = route.finishStation
         durationLabel.text = route.duration
-        
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .left
-        paragraphStyle.lineBreakMode = .byWordWrapping
-
-        paragraphStyle.minimumLineHeight = startStationLabel.font.lineHeight
-        paragraphStyle.maximumLineHeight = startStationLabel.font.lineHeight
-
-        let attributedText = NSAttributedString(
-            string: route.startStation,
-            attributes: [
-                .paragraphStyle: paragraphStyle
-            ]
-        )
-        startStationLabel.attributedText = attributedText
         
         transportImageView.image = UIImage(systemName: route.transportType.rawValue)
     }
@@ -138,7 +126,7 @@ final class RouteCell: UITableViewCell {
             
             finishTimeLabel.leadingAnchor.constraint(equalTo: durationLabel.trailingAnchor, constant: 2),
             finishTimeLabel.centerYAnchor.constraint(equalTo: startTimeLabel.centerYAnchor),
-            finishTimeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
+            finishTimeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             
             finishDateLabel.leadingAnchor.constraint(equalTo: finishTimeLabel.leadingAnchor),
             finishDateLabel.bottomAnchor.constraint(equalTo: finishTimeLabel.topAnchor, constant: -2),
