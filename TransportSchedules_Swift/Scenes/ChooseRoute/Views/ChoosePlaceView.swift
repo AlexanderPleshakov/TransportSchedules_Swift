@@ -16,14 +16,14 @@ final class ChoosePlaceView: UIView {
         return button
     }()
     
-    private let fromButton: CityButton = CityButton(
+    private let fromButton: StationButton = StationButton(
         title: NSLocalizedString(
             "from",
             comment: ""
         )
     )
     
-    private let toButton: CityButton = CityButton(
+    private let toButton: StationButton = StationButton(
         title: NSLocalizedString(
             "to",
             comment: ""
@@ -50,6 +50,18 @@ final class ChoosePlaceView: UIView {
     }
     
     // MARK: Methods
+    
+    func changeTitle(type: SearchType, text: String) {
+        let button = type == .from ? fromButton : toButton
+        
+        if !text.isEmpty {
+            button.setTitle(text, for: .normal)
+            button.setTitleColor(.black, for: .normal)
+        } else {
+            button.setTitle(button.firstTitle, for: .normal)
+            button.setTitleColor(.placeholderGray, for: .normal)
+        }
+    }
     
     private func configure() {
         layer.borderColor = UIColor.secondaryGray.cgColor

@@ -1,6 +1,6 @@
 import UIKit
 
-final class CityButton: UIButton {
+final class StationButton: UIButton {
     let firstTitle: String?
     
     init(title: String?) {

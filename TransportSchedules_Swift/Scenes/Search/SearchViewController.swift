@@ -4,6 +4,7 @@ final class SearchViewController: UIViewController {
     // MARK: Properties
     
     private let presenter: SearchPresenterProtocol
+    weak var delegate: SearchViewControllerDelegate?
     
     private let searchTitleLabel: UILabel = {
         let label = UILabel()
@@ -135,6 +136,16 @@ final class SearchViewController: UIViewController {
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.searchViewController(
+            didChange: presenter.stations[indexPath.row],
+            type: presenter.searchType
+        )
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        self.dismiss(animated: true)
     }
 }
 

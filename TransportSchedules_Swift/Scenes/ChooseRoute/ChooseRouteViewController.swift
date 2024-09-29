@@ -165,7 +165,8 @@ extension ChooseRouteViewController: ChoosePlaceViewDelegate {
     func startSearch(searchType: SearchType) {
         let searchViewController = ModulesAssembly.searchScreenBuilder(
             type: searchType,
-            transport: presenter.getSelectedTransport()
+            transport: presenter.getSelectedTransport(),
+            delegate: self
         )
         searchViewController.modalPresentationStyle = .pageSheet
         present(searchViewController, animated: true)
@@ -183,9 +184,19 @@ extension ChooseRouteViewController: UICalendarSelectionSingleDateDelegate {
     }
 }
 
+// MARK: TransportSelectionPanelDelegate
+
 extension ChooseRouteViewController: TransportSelectionPanelDelegate {
     func transportSelectionPanel(didSelect transport: TransportType) {
         presenter.select(transport: transport)
+    }
+}
+
+// MARK: SearchViewControllerDelegate
+
+extension ChooseRouteViewController: SearchViewControllerDelegate {
+    func searchViewController(didChange station: Station?, type: SearchType) {
+        choosePlaceView.changeTitle(type: type, text: station?.title ?? "")
     }
 }
 

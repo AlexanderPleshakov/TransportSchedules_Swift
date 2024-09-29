@@ -17,7 +17,7 @@
 		160BC78F2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC78E2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift */; };
 		160BC7922CA5CA8300FCE873 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 160BC7902CA5CA8300FCE873 /* Localizable.strings */; };
 		160BC7952CA5CD3100FCE873 /* ChoosePlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7942CA5CD3100FCE873 /* ChoosePlaceView.swift */; };
-		160BC7972CA5E4F600FCE873 /* CityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7962CA5E4F600FCE873 /* CityButton.swift */; };
+		160BC7972CA5E4F600FCE873 /* StationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7962CA5E4F600FCE873 /* StationButton.swift */; };
 		160BC7992CA5E66C00FCE873 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7982CA5E66C00FCE873 /* Colors.swift */; };
 		160BC79B2CA5EBEE00FCE873 /* SegmentDayControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC79A2CA5EBEE00FCE873 /* SegmentDayControl.swift */; };
 		160BC7C22CA70FF200FCE873 /* TransportSelectionPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7C12CA70FF200FCE873 /* TransportSelectionPanel.swift */; };
@@ -46,6 +46,7 @@
 		160BC7FB2CA8C6D300FCE873 /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7FA2CA8C6D300FCE873 /* TransportType.swift */; };
 		160BC7FE2CA8CC4600FCE873 /* ModulesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7FD2CA8CC4600FCE873 /* ModulesAssembly.swift */; };
 		160BC8002CA8CF4900FCE873 /* TransportSelectionPanelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7FF2CA8CF4900FCE873 /* TransportSelectionPanelDelegate.swift */; };
+		160BC8022CA8D5A900FCE873 /* SearchViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC8012CA8D5A900FCE873 /* SearchViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +62,7 @@
 		160BC78E2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRoutePresenterProtocol.swift; sourceTree = "<group>"; };
 		160BC7912CA5CA8300FCE873 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		160BC7942CA5CD3100FCE873 /* ChoosePlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlaceView.swift; sourceTree = "<group>"; };
-		160BC7962CA5E4F600FCE873 /* CityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityButton.swift; sourceTree = "<group>"; };
+		160BC7962CA5E4F600FCE873 /* StationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationButton.swift; sourceTree = "<group>"; };
 		160BC7982CA5E66C00FCE873 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		160BC79A2CA5EBEE00FCE873 /* SegmentDayControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentDayControl.swift; sourceTree = "<group>"; };
 		160BC7C12CA70FF200FCE873 /* TransportSelectionPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportSelectionPanel.swift; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 		160BC7FA2CA8C6D300FCE873 /* TransportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportType.swift; sourceTree = "<group>"; };
 		160BC7FD2CA8CC4600FCE873 /* ModulesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesAssembly.swift; sourceTree = "<group>"; };
 		160BC7FF2CA8CF4900FCE873 /* TransportSelectionPanelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportSelectionPanelDelegate.swift; sourceTree = "<group>"; };
+		160BC8012CA8D5A900FCE873 /* SearchViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				160BC7942CA5CD3100FCE873 /* ChoosePlaceView.swift */,
-				160BC7962CA5E4F600FCE873 /* CityButton.swift */,
+				160BC7962CA5E4F600FCE873 /* StationButton.swift */,
 				160BC79A2CA5EBEE00FCE873 /* SegmentDayControl.swift */,
 				160BC7C12CA70FF200FCE873 /* TransportSelectionPanel.swift */,
 				160BC7C32CA7104300FCE873 /* SelectButton.swift */,
@@ -212,6 +214,7 @@
 			children = (
 				160BC7C92CA760B200FCE873 /* SearchViewControllerProtocol.swift */,
 				160BC7CB2CA7610C00FCE873 /* SearchPresenterProtocol.swift */,
+				160BC8012CA8D5A900FCE873 /* SearchViewControllerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -383,7 +386,7 @@
 			files = (
 				160BC79B2CA5EBEE00FCE873 /* SegmentDayControl.swift in Sources */,
 				160BC7F12CA88FB800FCE873 /* NetworkTask.swift in Sources */,
-				160BC7972CA5E4F600FCE873 /* CityButton.swift in Sources */,
+				160BC7972CA5E4F600FCE873 /* StationButton.swift in Sources */,
 				160BC7F32CA898F100FCE873 /* StationsStorage.swift in Sources */,
 				160BC7992CA5E66C00FCE873 /* Colors.swift in Sources */,
 				160BC7C22CA70FF200FCE873 /* TransportSelectionPanel.swift in Sources */,
@@ -415,6 +418,7 @@
 				160BC7D82CA832EC00FCE873 /* SubtitleTableViewCell.swift in Sources */,
 				160BC7CE2CA7618000FCE873 /* SearchPresenter.swift in Sources */,
 				160BC7952CA5CD3100FCE873 /* ChoosePlaceView.swift in Sources */,
+				160BC8022CA8D5A900FCE873 /* SearchViewControllerDelegate.swift in Sources */,
 				160BC7E02CA835D500FCE873 /* ResultsPresenterProtocol.swift in Sources */,
 				160BC7EF2CA88F8800FCE873 /* NetworkRequest.swift in Sources */,
 			);

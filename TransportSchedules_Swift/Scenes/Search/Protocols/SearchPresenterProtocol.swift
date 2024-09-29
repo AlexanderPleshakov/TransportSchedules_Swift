@@ -4,4 +4,5 @@ protocol SearchPresenterProtocol {
     func filterStations(on text: String)
     
     var stations: [Station] { get }
+    var searchType: SearchType { get }
 }

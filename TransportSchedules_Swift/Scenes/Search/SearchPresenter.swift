@@ -4,7 +4,7 @@ final class SearchPresenter {
     // MARK: Properties
     
     weak var view: SearchViewControllerProtocol?
-    private let searchType: SearchType
+    let searchType: SearchType
     private let transport: TransportType
     private var allStations: [Station] = []
     private(set) var stations: [Station] = []
