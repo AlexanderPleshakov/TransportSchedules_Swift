@@ -57,7 +57,7 @@ struct Segment: Codable {
 struct RouteThread: Codable {
     let number, title, shortTitle: String? 
     let vehicle: String? 
-    let transportType: String?
+    let transportType: String
     let uid: String?
 
     enum CodingKeys: String, CodingKey {

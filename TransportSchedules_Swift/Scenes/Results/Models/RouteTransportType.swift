@@ -3,4 +3,5 @@ enum RouteTransportType: String {
     case train = "tram.fill"
     case lightrail = "lightrail.fill"
     case bus = "bus.fill"
+    case any = "questionmark.square.fill"
 }

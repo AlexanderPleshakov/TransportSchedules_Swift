@@ -1,6 +1,5 @@
 struct Route {
     let transportType: RouteTransportType
-    
     let routeName: String
     let routeNumber: String
     let transportMark: String

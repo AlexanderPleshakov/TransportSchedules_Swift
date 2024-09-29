@@ -14,6 +14,15 @@ final class ResultsViewController: UIViewController {
         return table
     }()
     
+    private let progressHud: UIActivityIndicatorView = {
+        let progressHud = UIActivityIndicatorView(style: .medium)
+        progressHud.hidesWhenStopped = true
+        progressHud.color = .black
+        progressHud.translatesAutoresizingMaskIntoConstraints = false
+        
+        return progressHud
+    }()
+    
     // MARK: Init
     
     init(presenter: ResultsPresenterProtocol) {
@@ -38,7 +47,6 @@ final class ResultsViewController: UIViewController {
     // MARK: Methods
     
     private func configure() {
-        title = "Москва - Тула"
         view.backgroundColor = .white
         
         let backButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(backButtonTapped))
@@ -54,12 +62,16 @@ final class ResultsViewController: UIViewController {
     
     private func setupViews() {
         view.addSubview(routesTableView)
+        view.addSubview(progressHud)
         
         NSLayoutConstraint.activate([
             routesTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             routesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             routesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            routesTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            routesTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            progressHud.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            progressHud.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
@@ -72,7 +84,18 @@ final class ResultsViewController: UIViewController {
 // MARK: ResultsViewControllerProtocol
 
 extension ResultsViewController: ResultsViewControllerProtocol {
+    func reloadData(title: String) {
+        routesTableView.reloadData()
+        self.title = title
+    }
     
+    func stopProgressHud() {
+        progressHud.stopAnimating()
+    }
+    
+    func startProgressHud(){
+        progressHud.startAnimating()
+    }
 }
 
 // MARK: UITableViewDelegate
