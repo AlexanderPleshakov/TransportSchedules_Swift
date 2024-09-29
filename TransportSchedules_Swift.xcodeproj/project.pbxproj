@@ -49,6 +49,9 @@
 		160BC8022CA8D5A900FCE873 /* SearchViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC8012CA8D5A900FCE873 /* SearchViewControllerDelegate.swift */; };
 		160BC8042CA97D0B00FCE873 /* RouteDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC8032CA97D0B00FCE873 /* RouteDay.swift */; };
 		160BC8072CA97D4D00FCE873 /* SegmentDayControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC8062CA97D4D00FCE873 /* SegmentDayControlDelegate.swift */; };
+		160BC8092CA9838600FCE873 /* RouteDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC8082CA9838600FCE873 /* RouteDTO.swift */; };
+		160BC80B2CA9878A00FCE873 /* ResultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC80A2CA9878A00FCE873 /* ResultsService.swift */; };
+		160BC80D2CA98C4C00FCE873 /* ResultsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC80C2CA98C4C00FCE873 /* ResultsRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +99,9 @@
 		160BC8012CA8D5A900FCE873 /* SearchViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerDelegate.swift; sourceTree = "<group>"; };
 		160BC8032CA97D0B00FCE873 /* RouteDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDay.swift; sourceTree = "<group>"; };
 		160BC8062CA97D4D00FCE873 /* SegmentDayControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentDayControlDelegate.swift; sourceTree = "<group>"; };
+		160BC8082CA9838600FCE873 /* RouteDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDTO.swift; sourceTree = "<group>"; };
+		160BC80A2CA9878A00FCE873 /* ResultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsService.swift; sourceTree = "<group>"; };
+		160BC80C2CA98C4C00FCE873 /* ResultsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +294,7 @@
 				160BC7FC2CA8CBC500FCE873 /* Network */,
 				160BC7F22CA898F100FCE873 /* StationsStorage.swift */,
 				160BC7FD2CA8CC4600FCE873 /* ModulesAssembly.swift */,
+				160BC80A2CA9878A00FCE873 /* ResultsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -296,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				160BC7F72CA8A0F900FCE873 /* StationsDTO.swift */,
+				160BC8082CA9838600FCE873 /* RouteDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -312,9 +320,8 @@
 			isa = PBXGroup;
 			children = (
 				160BC7EC2CA88D7C00FCE873 /* NetworkClient.swift */,
-				160BC7EE2CA88F8800FCE873 /* NetworkRequest.swift */,
 				160BC7F02CA88FB800FCE873 /* NetworkTask.swift */,
-				160BC7F42CA89EB400FCE873 /* StationsRequest.swift */,
+				160BC80E2CA98C6500FCE873 /* Requests */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -325,6 +332,16 @@
 				160BC8032CA97D0B00FCE873 /* RouteDay.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		160BC80E2CA98C6500FCE873 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				160BC7EE2CA88F8800FCE873 /* NetworkRequest.swift */,
+				160BC7F42CA89EB400FCE873 /* StationsRequest.swift */,
+				160BC80C2CA98C4C00FCE873 /* ResultsRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +434,7 @@
 				160BC7ED2CA88D7C00FCE873 /* NetworkClient.swift in Sources */,
 				160BC7F52CA89EB400FCE873 /* StationsRequest.swift in Sources */,
 				160BC7762CA5BD8300FCE873 /* ChooseRouteViewController.swift in Sources */,
+				160BC80B2CA9878A00FCE873 /* ResultsService.swift in Sources */,
 				160BC7D02CA766B100FCE873 /* ChoosePlaceViewDelegate.swift in Sources */,
 				160BC7D52CA82AF900FCE873 /* Station.swift in Sources */,
 				160BC7FE2CA8CC4600FCE873 /* ModulesAssembly.swift in Sources */,
@@ -429,6 +447,7 @@
 				160BC8002CA8CF4900FCE873 /* TransportSelectionPanelDelegate.swift in Sources */,
 				160BC7C42CA7104300FCE873 /* SelectButton.swift in Sources */,
 				160BC7E22CA835EE00FCE873 /* ResultsViewControllerProtocol.swift in Sources */,
+				160BC80D2CA98C4C00FCE873 /* ResultsRequest.swift in Sources */,
 				160BC7742CA5BD8300FCE873 /* SceneDelegate.swift in Sources */,
 				160BC7DB2CA8358200FCE873 /* ResultsViewController.swift in Sources */,
 				160BC7D82CA832EC00FCE873 /* SubtitleTableViewCell.swift in Sources */,
@@ -437,6 +456,7 @@
 				160BC8022CA8D5A900FCE873 /* SearchViewControllerDelegate.swift in Sources */,
 				160BC7E02CA835D500FCE873 /* ResultsPresenterProtocol.swift in Sources */,
 				160BC7EF2CA88F8800FCE873 /* NetworkRequest.swift in Sources */,
+				160BC8092CA9838600FCE873 /* RouteDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

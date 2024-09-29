@@ -2,7 +2,7 @@ struct Route {
     let transportType: RouteTransportType
     
     let routeName: String
-    let transportName: String
+    let routeNumber: String
     let transportMark: String
     let startDate: String
     let finishDate: String

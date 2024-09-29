@@ -1,9 +1,5 @@
 import Foundation
 
-protocol StationsStorage {
-    
-}
-
 final class DefaultStationsStorage {
     static let shared = DefaultStationsStorage()
     static let notificationName = Notification.Name("StationsLoaded")

@@ -43,7 +43,7 @@ final class RouteCell: UITableViewCell {
     
     func configure(_ route: Route) {
         routeNameLabel.text = route.routeName
-        transportName.text = route.transportName
+        transportName.text = route.routeNumber
         transportMark.text = route.transportMark
         startDateLabel.text = route.startDate
         finishDateLabel.text = route.finishDate

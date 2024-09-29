@@ -32,6 +32,7 @@ final class ResultsViewController: UIViewController {
         super.viewDidLoad()
         
         configure()
+        presenter.setup()
     }
     
     // MARK: Methods
