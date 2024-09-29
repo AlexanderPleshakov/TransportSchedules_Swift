@@ -47,6 +47,8 @@
 		160BC7FE2CA8CC4600FCE873 /* ModulesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7FD2CA8CC4600FCE873 /* ModulesAssembly.swift */; };
 		160BC8002CA8CF4900FCE873 /* TransportSelectionPanelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC7FF2CA8CF4900FCE873 /* TransportSelectionPanelDelegate.swift */; };
 		160BC8022CA8D5A900FCE873 /* SearchViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC8012CA8D5A900FCE873 /* SearchViewControllerDelegate.swift */; };
+		160BC8042CA97D0B00FCE873 /* RouteDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC8032CA97D0B00FCE873 /* RouteDay.swift */; };
+		160BC8072CA97D4D00FCE873 /* SegmentDayControlDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BC8062CA97D4D00FCE873 /* SegmentDayControlDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		160BC7FD2CA8CC4600FCE873 /* ModulesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesAssembly.swift; sourceTree = "<group>"; };
 		160BC7FF2CA8CF4900FCE873 /* TransportSelectionPanelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportSelectionPanelDelegate.swift; sourceTree = "<group>"; };
 		160BC8012CA8D5A900FCE873 /* SearchViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerDelegate.swift; sourceTree = "<group>"; };
+		160BC8032CA97D0B00FCE873 /* RouteDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDay.swift; sourceTree = "<group>"; };
+		160BC8062CA97D4D00FCE873 /* SegmentDayControlDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentDayControlDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 		160BC78A2CA5C2D900FCE873 /* ChooseRoute */ = {
 			isa = PBXGroup;
 			children = (
+				160BC8052CA97D1200FCE873 /* Models */,
 				160BC7932CA5CD0500FCE873 /* Views */,
 				160BC78B2CA5C2FC00FCE873 /* Protocols */,
 				160BC7752CA5BD8300FCE873 /* ChooseRouteViewController.swift */,
@@ -181,6 +186,7 @@
 				160BC78E2CA5C37B00FCE873 /* ChooseRoutePresenterProtocol.swift */,
 				160BC7CF2CA766B100FCE873 /* ChoosePlaceViewDelegate.swift */,
 				160BC7FF2CA8CF4900FCE873 /* TransportSelectionPanelDelegate.swift */,
+				160BC8062CA97D4D00FCE873 /* SegmentDayControlDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -313,6 +319,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		160BC8052CA97D1200FCE873 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				160BC8032CA97D0B00FCE873 /* RouteDay.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -384,8 +398,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160BC8072CA97D4D00FCE873 /* SegmentDayControlDelegate.swift in Sources */,
 				160BC79B2CA5EBEE00FCE873 /* SegmentDayControl.swift in Sources */,
 				160BC7F12CA88FB800FCE873 /* NetworkTask.swift in Sources */,
+				160BC8042CA97D0B00FCE873 /* RouteDay.swift in Sources */,
 				160BC7972CA5E4F600FCE873 /* StationButton.swift in Sources */,
 				160BC7F32CA898F100FCE873 /* StationsStorage.swift in Sources */,
 				160BC7992CA5E66C00FCE873 /* Colors.swift in Sources */,

@@ -185,6 +185,7 @@ extension ChooseRouteViewController: UICalendarSelectionSingleDateDelegate {
         guard let date = dateComponents?.date else { return }
         
         segmentedControl?.setDate(date: date)
+        presenter.setDate(date: date)
         closeCalendarView()
     }
 }
@@ -206,4 +207,9 @@ extension ChooseRouteViewController: SearchViewControllerDelegate {
     }
 }
 
+extension ChooseRouteViewController: SegmentDayControlDelegate {
+    func segmentDayControl(didSelect day: RouteDay) {
+        presenter.setDate(when: day)
+    }
+}
 
