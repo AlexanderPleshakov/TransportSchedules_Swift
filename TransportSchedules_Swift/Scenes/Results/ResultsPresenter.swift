@@ -7,6 +7,7 @@ final class ResultsPresenter {
     
     private(set) var routes: [Route] = []
     private let resultsService: ResultsServiceProtocol
+    private let routeRequestInfo: RouteRequestInfo
     
     private let timeFormatter: DateFormatter = {
         let timeFormatter = DateFormatter()
@@ -34,12 +35,16 @@ final class ResultsPresenter {
     
     // MARK: Init
     
-    init(resultsService: ResultsServiceProtocol) {
+    init(resultsService: ResultsServiceProtocol, routeRequestInfo: RouteRequestInfo) {
         self.resultsService = resultsService
+        self.routeRequestInfo = routeRequestInfo
     }
     
-    convenience init() {
-        self.init(resultsService: ResultsService())
+    convenience init(routeRequestInfo: RouteRequestInfo) {
+        self.init(
+            resultsService: ResultsService(),
+            routeRequestInfo: routeRequestInfo
+        )
     }
     
     // MARK: Methods
@@ -107,7 +112,12 @@ final class ResultsPresenter {
 extension ResultsPresenter: ResultsPresenterProtocol {
     func setup() {
         view?.startProgressHud()
-        resultsService.getResults { [weak self] result in
+        resultsService.getResults(
+            transport: routeRequestInfo.transport,
+            date: routeRequestInfo.date,
+            from: routeRequestInfo.from,
+            to: routeRequestInfo.to
+        ) { [weak self] result in
             guard let self else { return }
             switch result {
             case .success(let routes):

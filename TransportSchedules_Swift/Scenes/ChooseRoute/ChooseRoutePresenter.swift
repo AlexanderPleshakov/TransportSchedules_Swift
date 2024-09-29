@@ -27,8 +27,6 @@ final class ChooseRoutePresenter: ChooseRoutePresenterProtocol {
         case .to:
             toStation = station
         }
-        
-        print(station)
     }
     
     func switchStations() {
@@ -49,7 +47,17 @@ final class ChooseRoutePresenter: ChooseRoutePresenterProtocol {
 
             if let tomorrow = calendar.date(byAdding: .day, value: 1, to: today) {
                 date = tomorrow
+                print(date)
             }
         }
+    }
+    
+    func getRouteInfo() -> RouteRequestInfo {
+        RouteRequestInfo(
+            transport: selectedTransport,
+            date: date,
+            from: fromStation?.code ?? "",
+            to: toStation?.code ?? ""
+        )
     }
 }

@@ -55,21 +55,6 @@ final class RouteCell: UITableViewCell {
         finishStationLabel.text = route.finishStation
         durationLabel.text = route.duration
         
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .left
-        paragraphStyle.lineBreakMode = .byWordWrapping
-
-        paragraphStyle.minimumLineHeight = startStationLabel.font.lineHeight
-        paragraphStyle.maximumLineHeight = startStationLabel.font.lineHeight
-
-        let attributedText = NSAttributedString(
-            string: route.startStation,
-            attributes: [
-                .paragraphStyle: paragraphStyle
-            ]
-        )
-        startStationLabel.attributedText = attributedText
-        
         transportImageView.image = UIImage(systemName: route.transportType.rawValue)
     }
     

@@ -8,7 +8,9 @@ protocol ModulesAssemblyProtocol {
         delegate: SearchViewControllerDelegate,
         station: Station?
     ) -> UIViewController
-    static func resultsScreenBuilder() -> UIViewController
+    static func resultsScreenBuilder(
+        routeRequestInfo: RouteRequestInfo
+    ) -> UIViewController
 }
 
 final class ModulesAssembly: ModulesAssemblyProtocol {
@@ -38,8 +40,8 @@ final class ModulesAssembly: ModulesAssemblyProtocol {
         return viewController
     }
     
-    static func resultsScreenBuilder() -> UIViewController {
-        let presenter = ResultsPresenter()
+    static func resultsScreenBuilder(routeRequestInfo: RouteRequestInfo) -> UIViewController {
+        let presenter = ResultsPresenter(routeRequestInfo: routeRequestInfo)
         let viewController = ResultsViewController(presenter: presenter)
         presenter.view = viewController
         

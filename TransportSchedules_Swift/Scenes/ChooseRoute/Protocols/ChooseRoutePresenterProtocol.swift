@@ -8,4 +8,5 @@ protocol ChooseRoutePresenterProtocol {
     func switchStations() 
     func setDate(date: Date)
     func setDate(when day: RouteDay)
+    func getRouteInfo() -> RouteRequestInfo
 }

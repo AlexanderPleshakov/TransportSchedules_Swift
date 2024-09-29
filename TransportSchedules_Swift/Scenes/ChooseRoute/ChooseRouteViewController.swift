@@ -79,6 +79,7 @@ final class ChooseRouteViewController: UIViewController {
         searchButton.addTarget(self, action: #selector(buttonSearchTapped), for: .touchUpInside)
         choosePlaceView.delegate = self
         transportSelectionPanel.delegate = self
+        segmentedControl?.delegate = self
         
         setupViews()
     }
@@ -149,7 +150,7 @@ final class ChooseRouteViewController: UIViewController {
     
     @objc private func buttonSearchTapped() {
         navigationController?.pushViewController(
-            ModulesAssembly.resultsScreenBuilder(),
+            ModulesAssembly.resultsScreenBuilder(routeRequestInfo: presenter.getRouteInfo()),
             animated: true
         )
     }
