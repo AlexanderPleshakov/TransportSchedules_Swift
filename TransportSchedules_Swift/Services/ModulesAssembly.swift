@@ -5,7 +5,8 @@ protocol ModulesAssemblyProtocol {
     static func searchScreenBuilder(
         type: SearchType,
         transport: TransportType,
-        delegate: SearchViewControllerDelegate
+        delegate: SearchViewControllerDelegate,
+        station: Station?
     ) -> UIViewController
     static func resultsScreenBuilder() -> UIViewController
 }
@@ -22,9 +23,14 @@ final class ModulesAssembly: ModulesAssemblyProtocol {
     static func searchScreenBuilder(
         type: SearchType,
         transport: TransportType,
-        delegate: SearchViewControllerDelegate
+        delegate: SearchViewControllerDelegate,
+        station: Station?
     ) -> UIViewController {
-        let presenter = SearchPresenter(type: type, transport: transport)
+        let presenter = SearchPresenter(
+            type: type,
+            transport: transport,
+            station: station
+        )
         let viewController = SearchViewController(presenter: presenter)
         presenter.view = viewController
         viewController.delegate = delegate

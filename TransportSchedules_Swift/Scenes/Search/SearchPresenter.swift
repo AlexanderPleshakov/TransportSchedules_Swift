@@ -8,14 +8,16 @@ final class SearchPresenter {
     private let transport: TransportType
     private var allStations: [Station] = []
     private(set) var stations: [Station] = []
+    private(set) var selectedStationName: String
     
     private var notificationToken: NSObjectProtocol?
     
     // MARK: Init
     
-    init(type: SearchType, transport: TransportType) {
+    init(type: SearchType, transport: TransportType, station: Station?) {
         self.searchType = type
         self.transport = transport
+        self.selectedStationName = station?.title ?? ""
         
         if DefaultStationsStorage.shared.stationsIsLoaded {
             self.allStations = DefaultStationsStorage.shared.stations
@@ -51,6 +53,10 @@ extension SearchPresenter: SearchPresenterProtocol {
         case .to:
             return NSLocalizedString("to", comment: "")
         }
+    }
+    
+    func getSelectedStation() -> String {
+        selectedStationName
     }
     
     func needLoading() -> Bool {

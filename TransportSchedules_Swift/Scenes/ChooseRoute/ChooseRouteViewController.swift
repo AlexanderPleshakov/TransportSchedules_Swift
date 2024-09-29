@@ -166,7 +166,8 @@ extension ChooseRouteViewController: ChoosePlaceViewDelegate {
         let searchViewController = ModulesAssembly.searchScreenBuilder(
             type: searchType,
             transport: presenter.getSelectedTransport(),
-            delegate: self
+            delegate: self,
+            station: presenter.getStationForSearch(with: searchType)
         )
         searchViewController.modalPresentationStyle = .pageSheet
         present(searchViewController, animated: true)
@@ -197,6 +198,7 @@ extension ChooseRouteViewController: TransportSelectionPanelDelegate {
 extension ChooseRouteViewController: SearchViewControllerDelegate {
     func searchViewController(didChange station: Station?, type: SearchType) {
         choosePlaceView.changeTitle(type: type, text: station?.title ?? "")
+        presenter.selectStation(station, with: type)
     }
 }
 

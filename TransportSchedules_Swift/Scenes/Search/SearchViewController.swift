@@ -53,6 +53,8 @@ final class SearchViewController: UIViewController {
     init(presenter: SearchPresenterProtocol) {
         self.presenter = presenter
         
+        presenter.filterStations(on: presenter.selectedStationName)
+        stationSearchBar.text = presenter.selectedStationName
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -66,6 +68,17 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         configure()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        if stationSearchBar.text == "" || stationSearchBar.text == nil {
+            delegate?.searchViewController(
+                didChange: nil,
+                type: presenter.searchType
+            )
+        }
     }
     
     // MARK: Methods
@@ -139,8 +152,10 @@ extension SearchViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let station = presenter.stations[indexPath.row]
+        stationSearchBar.text = station.title
         delegate?.searchViewController(
-            didChange: presenter.stations[indexPath.row],
+            didChange: station,
             type: presenter.searchType
         )
         tableView.deselectRow(at: indexPath, animated: true)

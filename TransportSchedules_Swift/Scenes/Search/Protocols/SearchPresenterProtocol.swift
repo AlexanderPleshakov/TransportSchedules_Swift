@@ -5,4 +5,5 @@ protocol SearchPresenterProtocol {
     
     var stations: [Station] { get }
     var searchType: SearchType { get }
+    var selectedStationName: String { get }
 }
