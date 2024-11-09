@@ -3,12 +3,6 @@
 ### Установка
 `git clone https://github.com/AlexanderPleshakov/TransportSchedules_Swift.git`
 
-### Результат
-
-<p align="center">
-  <img width="940" height="682" src="https://github.com/AlexanderPleshakov/my-assets/blob/main/indoors-task-design.png">
-</p>
-
 ### Описание работы
 
 Архитектура: MVP
